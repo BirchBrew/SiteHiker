@@ -26,7 +26,9 @@ defmodule AWIS.MixProject do
       # AWS Request Signing
       {:sigaws, "~> 0.7"},
       # XML Parser
-      {:quinn, "~> 1.1.2"}
+      {:quinn, "~> 1.1.2"},
+      # HTML Parse/Search/Select
+      {:floki, "~> 0.20.0"}
     ]
   end
 end
