@@ -3,8 +3,8 @@ defmodule AWIS do
   @request_counter_file "request_counter.txt"
   @request_limit 1000
 
-  @awis_url "https://awis.amazonaws.com/api"
-  @region "us-east-1"
+  @region "us-west-1"
+  @awis_url "https://awis.#{@region}.amazonaws.com/api"
   @url_info_response_groups ~w(
     Categories
     Rank
@@ -64,8 +64,10 @@ defmodule AWIS do
 
   defp fetch_data(params) do
     full_url = build_full_url(params)
+    headers = signed_request_headers(full_url)
     increment_counter()
-    HTTPoison.get!(full_url, signed_request_headers(full_url))
+    %HTTPoison.Response{body: body, status_code: 200} = HTTPoison.get!(full_url, headers)
+    body
   end
 
   defp build_full_url(params) do
@@ -76,6 +78,7 @@ defmodule AWIS do
     [access_key, secret] =
       Path.join("secrets", "keys.csv")
       |> File.read!()
+      |> String.trim()
       |> String.split(",")
 
     {:ok, %{} = sig_data, _} =
