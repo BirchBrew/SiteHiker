@@ -16,6 +16,7 @@ defmodule AWIS do
     OwnedDomains
     LinksInCount
     SiteData
+    RelatedLinks
   ) |> Enum.join(",")
 
   ##############

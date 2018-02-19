@@ -1,0 +1,628 @@
+<?xml version="1.0" ?>
+<aws:UrlInfoResponse xmlns:aws="http://awis.amazonaws.com/doc/2005-10-05">
+  <aws:Response xmlns:aws="http://awis.amazonaws.com/doc/2005-07-11">
+    <aws:OperationRequest>
+      <aws:RequestId>86bf3a63-15c5-11e8-8d7b-b3eb332482d4</aws:RequestId>
+    </aws:OperationRequest>
+    <aws:UrlInfoResult>
+      <aws:Alexa>
+        <aws:Request>
+          <aws:Arguments>
+            <aws:Argument>
+              <aws:Name>url</aws:Name>
+              <aws:Value>youtube.com</aws:Value>
+            </aws:Argument>
+            <aws:Argument>
+              <aws:Name>responsegroup</aws:Name>
+              <aws:Value>Categories,Rank,RankByCountry,UsageStats,AdultContent,Speed,Language,OwnedDomains,LinksInCount,SiteData,RelatedLinks</aws:Value>
+            </aws:Argument>
+          </aws:Arguments>
+        </aws:Request>
+        <aws:ContentData>
+          <aws:DataUrl type="canonical">youtube.com</aws:DataUrl>
+          <aws:SiteData>
+            <aws:Title>YouTube - Broadcast yourself</aws:Title>
+            <aws:Description>User-submitted videos with rating, comments, and contests.</aws:Description>
+            <aws:OnlineSince>15-Feb-2005</aws:OnlineSince>
+          </aws:SiteData>
+          <aws:Speed>
+            <aws:MedianLoadTime>2444</aws:MedianLoadTime>
+            <aws:Percentile>35</aws:Percentile>
+          </aws:Speed>
+          <aws:AdultContent>no</aws:AdultContent>
+          <aws:Language>
+            <aws:Locale>en</aws:Locale>
+          </aws:Language>
+          <aws:LinksInCount>3018643</aws:LinksInCount>
+          <aws:OwnedDomains/>
+        </aws:ContentData>
+        <aws:Related>
+          <aws:DataUrl type="canonical">youtube.com</aws:DataUrl>
+          <aws:RelatedLinks>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">zoints.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://zoints.com/</aws:NavigableUrl>
+              <aws:Title>Zoints</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">ytmnd.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://ytmnd.com/</aws:NavigableUrl>
+              <aws:Title>YTMND</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">xkcd.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://xkcd.com/</aws:NavigableUrl>
+              <aws:Title>xkcd</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www2.kget.jp/</aws:DataUrl>
+              <aws:NavigableUrl>http://www2.kget.jp/</aws:NavigableUrl>
+              <aws:Title>歌詞検索サービス♪歌詞ＧＥＴ</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www.zoho.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.zoho.com/</aws:NavigableUrl>
+              <aws:Title>Zoho</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www.zkouknito.cz/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.zkouknito.cz/</aws:NavigableUrl>
+              <aws:Title>to nejnovější u nás - FREEVIDEO, FREEFOTO | videa, fotky, alba, lidé, skupi</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www.ziyu.net/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.ziyu.net/</aws:NavigableUrl>
+              <aws:Title>ACR WEB</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www.zippyvideos.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.zippyvideos.com/</aws:NavigableUrl>
+              <aws:Title>Zippy Videos</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www.zillow.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.zillow.com/</aws:NavigableUrl>
+              <aws:Title>Zillow</aws:Title>
+            </aws:RelatedLink>
+            <aws:RelatedLink>
+              <aws:DataUrl type="canonical">www.zeneszoveg.hu/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.zeneszoveg.hu/</aws:NavigableUrl>
+              <aws:Title>Zeneszöveg.hu</aws:Title>
+            </aws:RelatedLink>
+          </aws:RelatedLinks>
+          <aws:Categories>
+            <aws:CategoryData>
+              <aws:Title>Video/Community Video</aws:Title>
+              <aws:AbsolutePath>Top/Arts/Video/Community_Video</aws:AbsolutePath>
+            </aws:CategoryData>
+            <aws:CategoryData>
+              <aws:Title>Web Applications/Video Sharing</aws:Title>
+              <aws:AbsolutePath>Top/Computers/Internet/On_the_Web/Web_Applications/Video_Sharing</aws:AbsolutePath>
+            </aws:CategoryData>
+            <aws:CategoryData>
+              <aws:Title>Audiovisuel/Vidéo</aws:Title>
+              <aws:AbsolutePath>Top/World/Français/Arts/Audiovisuel/Vidéo</aws:AbsolutePath>
+            </aws:CategoryData>
+            <aws:CategoryData>
+              <aws:Title>Kultura/Zábava</aws:Title>
+              <aws:AbsolutePath>Top/World/Česky/Kultura/Zábava</aws:AbsolutePath>
+            </aws:CategoryData>
+            <aws:CategoryData>
+              <aws:Title>Internet/Trên web</aws:Title>
+              <aws:AbsolutePath>Top/World/Vietnamese/Tin_học/Internet/Trên_web</aws:AbsolutePath>
+            </aws:CategoryData>
+            <aws:CategoryData>
+              <aws:Title>Nghệ thuật/Video</aws:Title>
+              <aws:AbsolutePath>Top/World/Vietnamese/Nghệ_thuật/Video</aws:AbsolutePath>
+            </aws:CategoryData>
+          </aws:Categories>
+        </aws:Related>
+        <aws:TrafficData>
+          <aws:DataUrl type="canonical">youtube.com</aws:DataUrl>
+          <aws:Rank>2</aws:Rank>
+          <aws:RankByCountry>
+            <aws:Country Code="AO">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.8%</aws:PageViews>
+                <aws:Users>0.9%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="VN">
+              <aws:Rank>3</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.8%</aws:PageViews>
+                <aws:Users>0.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="IN">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>8.0%</aws:PageViews>
+                <aws:Users>8.4%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="ID">
+              <aws:Rank>3</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.5%</aws:PageViews>
+                <aws:Users>1.9%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="EG">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.3%</aws:PageViews>
+                <aws:Users>1.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="TH">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.0%</aws:PageViews>
+                <aws:Users>1.2%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="BD">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="TR">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>2.1%</aws:PageViews>
+                <aws:Users>1.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="MY">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="RU">
+              <aws:Rank>3</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>4.2%</aws:PageViews>
+                <aws:Users>4.1%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="VE">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.7%</aws:PageViews>
+                <aws:Users>0.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="TW">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.3%</aws:PageViews>
+                <aws:Users>1.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="PH">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.5%</aws:PageViews>
+                <aws:Users>0.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="ES">
+              <aws:Rank>3</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>2.0%</aws:PageViews>
+                <aws:Users>1.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="AZ">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.9%</aws:PageViews>
+                <aws:Users>1.0%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="PK">
+              <aws:Rank>1</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.7%</aws:PageViews>
+                <aws:Users>1.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="US">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>15.5%</aws:PageViews>
+                <aws:Users>16.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="HK">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="RO">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="BE">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.5%</aws:PageViews>
+                <aws:Users>0.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="AU">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.5%</aws:PageViews>
+                <aws:Users>1.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="SA">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.2%</aws:PageViews>
+                <aws:Users>1.1%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="CL">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.5%</aws:PageViews>
+                <aws:Users>0.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="PL">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.5%</aws:PageViews>
+                <aws:Users>1.4%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="SE">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.7%</aws:PageViews>
+                <aws:Users>0.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="AR">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.3%</aws:PageViews>
+                <aws:Users>1.2%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="GB">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>3.3%</aws:PageViews>
+                <aws:Users>3.0%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="FR">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>2.7%</aws:PageViews>
+                <aws:Users>2.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="CO">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="KR">
+              <aws:Rank>1</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.8%</aws:PageViews>
+                <aws:Users>2.0%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="UA">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.7%</aws:PageViews>
+                <aws:Users>0.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="BR">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>3.8%</aws:PageViews>
+                <aws:Users>3.4%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="IT">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.7%</aws:PageViews>
+                <aws:Users>1.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="GR">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.7%</aws:PageViews>
+                <aws:Users>0.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="ZA">
+              <aws:Rank>3</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="MX">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>2.0%</aws:PageViews>
+                <aws:Users>2.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="DZ">
+              <aws:Rank>1</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.7%</aws:PageViews>
+                <aws:Users>0.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="NL">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.9%</aws:PageViews>
+                <aws:Users>0.9%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="CA">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.9%</aws:PageViews>
+                <aws:Users>1.9%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="JP">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>5.1%</aws:PageViews>
+                <aws:Users>4.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="CN">
+              <aws:Rank>12</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>4.7%</aws:PageViews>
+                <aws:Users>3.7%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="O">
+              <aws:Rank/>
+              <aws:Contribution>
+                <aws:PageViews>13.2%</aws:PageViews>
+                <aws:Users>14.0%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="PE">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.6%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="DE">
+              <aws:Rank>2</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>3.3%</aws:PageViews>
+                <aws:Users>3.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+          </aws:RankByCountry>
+          <aws:UsageStatistics>
+            <aws:UsageStatistic>
+              <aws:TimeRange>
+                <aws:Months>3</aws:Months>
+              </aws:TimeRange>
+              <aws:Rank>
+                <aws:Value>2</aws:Value>
+                <aws:Delta>0</aws:Delta>
+              </aws:Rank>
+              <aws:Reach>
+                <aws:Rank>
+                  <aws:Value>1</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerMillion>
+                  <aws:Value>430,760</aws:Value>
+                  <aws:Delta>+2.67%</aws:Delta>
+                </aws:PerMillion>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:PerMillion>
+                  <aws:Value>51,423</aws:Value>
+                  <aws:Delta>+0.641%</aws:Delta>
+                </aws:PerMillion>
+                <aws:Rank>
+                  <aws:Value>2</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerUser>
+                  <aws:Value>4.750</aws:Value>
+                  <aws:Delta>-2.06%</aws:Delta>
+                </aws:PerUser>
+              </aws:PageViews>
+            </aws:UsageStatistic>
+            <aws:UsageStatistic>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Rank>
+                <aws:Value>2</aws:Value>
+                <aws:Delta>0</aws:Delta>
+              </aws:Rank>
+              <aws:Reach>
+                <aws:Rank>
+                  <aws:Value>1</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerMillion>
+                  <aws:Value>429,670</aws:Value>
+                  <aws:Delta>-0.18%</aws:Delta>
+                </aws:PerMillion>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:PerMillion>
+                  <aws:Value>51,742</aws:Value>
+                  <aws:Delta>-0.767%</aws:Delta>
+                </aws:PerMillion>
+                <aws:Rank>
+                  <aws:Value>2</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerUser>
+                  <aws:Value>4.68</aws:Value>
+                  <aws:Delta>-0.637%</aws:Delta>
+                </aws:PerUser>
+              </aws:PageViews>
+            </aws:UsageStatistic>
+            <aws:UsageStatistic>
+              <aws:TimeRange>
+                <aws:Days>7</aws:Days>
+              </aws:TimeRange>
+              <aws:Rank>
+                <aws:Value>2</aws:Value>
+                <aws:Delta>0</aws:Delta>
+              </aws:Rank>
+              <aws:Reach>
+                <aws:Rank>
+                  <aws:Value>1</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerMillion>
+                  <aws:Value>428,200</aws:Value>
+                  <aws:Delta>-0.24%</aws:Delta>
+                </aws:PerMillion>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:PerMillion>
+                  <aws:Value>52,512</aws:Value>
+                  <aws:Delta>-0.38%</aws:Delta>
+                </aws:PerMillion>
+                <aws:Rank>
+                  <aws:Value>2</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerUser>
+                  <aws:Value>4.68</aws:Value>
+                  <aws:Delta>-0.21%</aws:Delta>
+                </aws:PerUser>
+              </aws:PageViews>
+            </aws:UsageStatistic>
+            <aws:UsageStatistic>
+              <aws:TimeRange>
+                <aws:Days>1</aws:Days>
+              </aws:TimeRange>
+              <aws:Rank>
+                <aws:Value>1</aws:Value>
+                <aws:Delta>0</aws:Delta>
+              </aws:Rank>
+              <aws:Reach>
+                <aws:Rank>
+                  <aws:Value>1</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerMillion>
+                  <aws:Value>446,300</aws:Value>
+                  <aws:Delta>+0.5%</aws:Delta>
+                </aws:PerMillion>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:PerMillion>
+                  <aws:Value>58,180</aws:Value>
+                  <aws:Delta>+1.3%</aws:Delta>
+                </aws:PerMillion>
+                <aws:Rank>
+                  <aws:Value>2</aws:Value>
+                  <aws:Delta>0</aws:Delta>
+                </aws:Rank>
+                <aws:PerUser>
+                  <aws:Value>4.840</aws:Value>
+                  <aws:Delta>+0.8%</aws:Delta>
+                </aws:PerUser>
+              </aws:PageViews>
+            </aws:UsageStatistic>
+          </aws:UsageStatistics>
+          <aws:ContributingSubdomains>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>youtube.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>97.37%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>98.07%</aws:Percentage>
+                <aws:PerUser>4.71</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>accounts.youtube.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>5.07%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>1.79%</aws:Percentage>
+                <aws:PerUser>1.65</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>gaming.youtube.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.21%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.06%</aws:Percentage>
+                <aws:PerUser>1.31</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>OTHER</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>0</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+          </aws:ContributingSubdomains>
+        </aws:TrafficData>
+      </aws:Alexa>
+    </aws:UrlInfoResult>
+    <aws:ResponseStatus xmlns:aws="http://alexa.amazonaws.com/doc/2005-10-05/">
+      <aws:StatusCode>Success</aws:StatusCode>
+    </aws:ResponseStatus>
+  </aws:Response>
+</aws:UrlInfoResponse>

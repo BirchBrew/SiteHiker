@@ -2,7 +2,7 @@
 <aws:UrlInfoResponse xmlns:aws="http://awis.amazonaws.com/doc/2005-10-05">
   <aws:Response xmlns:aws="http://awis.amazonaws.com/doc/2005-07-11">
     <aws:OperationRequest>
-      <aws:RequestId>864687fc-15c5-11e8-be17-55828390fb18</aws:RequestId>
+      <aws:RequestId>954f692b-15c5-11e8-923e-a930bf422d82</aws:RequestId>
     </aws:OperationRequest>
     <aws:UrlInfoResult>
       <aws:Alexa>
@@ -10,7 +10,7 @@
           <aws:Arguments>
             <aws:Argument>
               <aws:Name>url</aws:Name>
-              <aws:Value>google.com</aws:Value>
+              <aws:Value>apple.com</aws:Value>
             </aws:Argument>
             <aws:Argument>
               <aws:Name>responsegroup</aws:Name>
@@ -19,25 +19,29 @@
           </aws:Arguments>
         </aws:Request>
         <aws:ContentData>
-          <aws:DataUrl type="canonical">google.com</aws:DataUrl>
+          <aws:DataUrl type="canonical">apple.com</aws:DataUrl>
           <aws:SiteData>
-            <aws:Title>Google</aws:Title>
-            <aws:Description>Enables users to search the world's information, including webpages, images, and videos. Offers unique features and search technology.</aws:Description>
-            <aws:OnlineSince>15-Sep-1997</aws:OnlineSince>
+            <aws:Title>Apple Computer, Inc.</aws:Title>
+            <aws:Description>Official site, with details of products and services.</aws:Description>
           </aws:SiteData>
           <aws:Speed>
-            <aws:MedianLoadTime>2325</aws:MedianLoadTime>
-            <aws:Percentile>38</aws:Percentile>
+            <aws:MedianLoadTime>2148</aws:MedianLoadTime>
+            <aws:Percentile>42</aws:Percentile>
           </aws:Speed>
           <aws:AdultContent>no</aws:AdultContent>
           <aws:Language>
             <aws:Locale>en</aws:Locale>
           </aws:Language>
-          <aws:LinksInCount>3966838</aws:LinksInCount>
-          <aws:OwnedDomains/>
+          <aws:LinksInCount>493265</aws:LinksInCount>
+          <aws:OwnedDomains>
+            <aws:OwnedDomain>
+              <aws:Domain>mac.com</aws:Domain>
+              <aws:Title>mac.com</aws:Title>
+            </aws:OwnedDomain>
+          </aws:OwnedDomains>
         </aws:ContentData>
         <aws:Related>
-          <aws:DataUrl type="canonical">google.com</aws:DataUrl>
+          <aws:DataUrl type="canonical">apple.com</aws:DataUrl>
           <aws:RelatedLinks>
             <aws:RelatedLink>
               <aws:DataUrl type="canonical">www.yahoo.com/</aws:DataUrl>
@@ -45,312 +49,276 @@
               <aws:Title>Yahoo!</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.ask.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.ask.com/</aws:NavigableUrl>
-              <aws:Title>Ask.com</aws:Title>
+              <aws:DataUrl type="canonical">www.tucows.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.tucows.com/</aws:NavigableUrl>
+              <aws:Title>Tucows</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">wikipedia.org/</aws:DataUrl>
-              <aws:NavigableUrl>http://wikipedia.org/</aws:NavigableUrl>
-              <aws:Title>Wikipedia</aws:Title>
+              <aws:DataUrl type="canonical">www.sun.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.sun.com/</aws:NavigableUrl>
+              <aws:Title>Sun Microsystems</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.yellowpages.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.yellowpages.com/</aws:NavigableUrl>
-              <aws:Title>YELLOWPAGES.com, Inc.</aws:Title>
+              <aws:DataUrl type="canonical">www.sgi.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.sgi.com/</aws:NavigableUrl>
+              <aws:Title>Silicon Graphics</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.yehey.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.yehey.com/</aws:NavigableUrl>
-              <aws:Title>Yehey</aws:Title>
+              <aws:DataUrl type="canonical">www.real.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.real.com/</aws:NavigableUrl>
+              <aws:Title>RealPlayer</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.winamp.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.winamp.com/</aws:NavigableUrl>
-              <aws:Title>Winamp</aws:Title>
+              <aws:DataUrl type="canonical">www.php.net/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.php.net/</aws:NavigableUrl>
+              <aws:Title>Php: Hypertext Preprocessor</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.whowhere.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.whowhere.com/</aws:NavigableUrl>
-              <aws:Title>Lycos People Search</aws:Title>
+              <aws:DataUrl type="canonical">www.novell.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.novell.com/</aws:NavigableUrl>
+              <aws:Title>Novell: Worldwide</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.webcrawler.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.webcrawler.com/</aws:NavigableUrl>
-              <aws:Title>Webcrawler.com</aws:Title>
+              <aws:DataUrl type="canonical">www.netscape.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.netscape.com/</aws:NavigableUrl>
+              <aws:Title>Derbyshire Education Business Partnership (DEBP)</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.vmware.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.vmware.com/</aws:NavigableUrl>
-              <aws:Title>VMware - Virtualization Software</aws:Title>
+              <aws:DataUrl type="canonical">www.mysql.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.mysql.com/</aws:NavigableUrl>
+              <aws:Title>MySQL</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">www.vinden.nl/</aws:DataUrl>
-              <aws:NavigableUrl>http://www.vinden.nl/</aws:NavigableUrl>
-              <aws:Title>Vinden.nl</aws:Title>
+              <aws:DataUrl type="canonical">www.msn.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://www.msn.com/</aws:NavigableUrl>
+              <aws:Title>MSN.com</aws:Title>
             </aws:RelatedLink>
             <aws:RelatedLink>
-              <aws:DataUrl type="canonical">ask.com/</aws:DataUrl>
-              <aws:NavigableUrl>http://ask.com/</aws:NavigableUrl>
-              <aws:Title>ask.com/</aws:Title>
+              <aws:DataUrl type="canonical">registration.foxmovies.com/</aws:DataUrl>
+              <aws:NavigableUrl>http://registration.foxmovies.com/</aws:NavigableUrl>
+              <aws:Title>registration.foxmovies.com/</aws:Title>
             </aws:RelatedLink>
           </aws:RelatedLinks>
           <aws:Categories>
             <aws:CategoryData>
-              <aws:Title>Search Engines/Google</aws:Title>
-              <aws:AbsolutePath>Top/Computers/Internet/Searching/Search_Engines/Google</aws:AbsolutePath>
+              <aws:Title>Apple/Macintosh</aws:Title>
+              <aws:AbsolutePath>Top/Computers/Systems/Apple/Macintosh</aws:AbsolutePath>
             </aws:CategoryData>
             <aws:CategoryData>
-              <aws:Title>Industrial/Computers and Internet</aws:Title>
-              <aws:AbsolutePath>Top/Regional/North_America/United_States/California/Localities/M/Mountain_View/Business_and_Economy/Industrial/Computers_and_Internet</aws:AbsolutePath>
+              <aws:Title>Companies/Apple Inc.</aws:Title>
+              <aws:AbsolutePath>Top/Computers/Companies/Apple_Inc.</aws:AbsolutePath>
             </aws:CategoryData>
             <aws:CategoryData>
-              <aws:Title>كمبيوتر و إنترنت/محركات بحث</aws:Title>
-              <aws:AbsolutePath>Top/World/Arabic/إقليمـي/الشرق_الأوسط/السعودية/تجارة_و_أقتصاد/كمبيوتر_و_إنترنت/محركات_بحث</aws:AbsolutePath>
-            </aws:CategoryData>
-            <aws:CategoryData>
-              <aws:Title>Moteurs de recherche/Google</aws:Title>
-              <aws:AbsolutePath>Top/World/Français/Informatique/Internet/Recherche/Moteurs_de_recherche/Google</aws:AbsolutePath>
-            </aws:CategoryData>
-            <aws:CategoryData>
-              <aws:Title>Buscando en Internet/Motores de búsqueda</aws:Title>
-              <aws:AbsolutePath>Top/World/Español/Informática/Internet/Buscando_en_Internet/Motores_de_búsqueda</aws:AbsolutePath>
+              <aws:Title>Business and Economy/Computers and Internet</aws:Title>
+              <aws:AbsolutePath>Top/Regional/North_America/United_States/California/Localities/C/Cupertino/Business_and_Economy/Computers_and_Internet</aws:AbsolutePath>
             </aws:CategoryData>
           </aws:Categories>
         </aws:Related>
         <aws:TrafficData>
-          <aws:DataUrl type="canonical">google.com</aws:DataUrl>
-          <aws:Rank>1</aws:Rank>
+          <aws:DataUrl type="canonical">apple.com</aws:DataUrl>
+          <aws:Rank>65</aws:Rank>
           <aws:RankByCountry>
             <aws:Country Code="AO">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>85</aws:Rank>
               <aws:Contribution>
                 <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>0.7%</aws:Users>
+                <aws:Users>0.6%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="IN">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>155</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>5.7%</aws:PageViews>
-                <aws:Users>7.6%</aws:Users>
+                <aws:PageViews>2.9%</aws:PageViews>
+                <aws:Users>2.9%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="ID">
-              <aws:Rank>2</aws:Rank>
+            <aws:Country Code="SG">
+              <aws:Rank>42</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>1.5%</aws:PageViews>
-                <aws:Users>1.9%</aws:Users>
+                <aws:PageViews>0.6%</aws:PageViews>
+                <aws:Users>0.6%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="TH">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>88</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>0.3%</aws:PageViews>
+                <aws:PageViews>0.5%</aws:PageViews>
                 <aws:Users>0.5%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="BD">
-              <aws:Rank>1</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.6%</aws:PageViews>
-                <aws:Users>0.6%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
             <aws:Country Code="TR">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>131</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>0.7%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="MY">
-              <aws:Rank>1</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>1.1%</aws:PageViews>
-                <aws:Users>1.1%</aws:Users>
+                <aws:PageViews>1.0%</aws:PageViews>
+                <aws:Users>0.9%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="RU">
-              <aws:Rank>7</aws:Rank>
+              <aws:Rank>168</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>1.4%</aws:Users>
+                <aws:PageViews>1.3%</aws:PageViews>
+                <aws:Users>1.5%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="TW">
-              <aws:Rank>5</aws:Rank>
+              <aws:Rank>69</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>0.7%</aws:PageViews>
-                <aws:Users>0.9%</aws:Users>
+                <aws:PageViews>2.0%</aws:PageViews>
+                <aws:Users>2.0%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="ES">
-              <aws:Rank>2</aws:Rank>
+              <aws:Rank>81</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>1.9%</aws:PageViews>
-                <aws:Users>1.6%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="PK">
-              <aws:Rank>3</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>1.0%</aws:PageViews>
-                <aws:Users>1.1%</aws:Users>
+                <aws:PageViews>2.0%</aws:PageViews>
+                <aws:Users>2.0%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="US">
-              <aws:Rank>1</aws:Rank>
+              <aws:Rank>37</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>47.7%</aws:PageViews>
-                <aws:Users>33.4%</aws:Users>
+                <aws:PageViews>27.8%</aws:PageViews>
+                <aws:Users>28.9%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="SD">
-              <aws:Rank>1</aws:Rank>
+            <aws:Country Code="HK">
+              <aws:Rank>45</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.2%</aws:PageViews>
+                <aws:Users>1.0%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="IR">
+              <aws:Rank>210</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.7%</aws:PageViews>
+                <aws:Users>0.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="BE">
+              <aws:Rank>76</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.5%</aws:PageViews>
+                <aws:Users>0.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="AU">
+              <aws:Rank>44</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.7%</aws:PageViews>
+                <aws:Users>1.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="SA">
+              <aws:Rank>110</aws:Rank>
               <aws:Contribution>
                 <aws:PageViews>0.6%</aws:PageViews>
                 <aws:Users>0.6%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="IR">
-              <aws:Rank>1</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>4.8%</aws:PageViews>
-                <aws:Users>3.1%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="AU">
-              <aws:Rank>3</aws:Rank>
+            <aws:Country Code="PL">
+              <aws:Rank>176</aws:Rank>
               <aws:Contribution>
                 <aws:PageViews>0.6%</aws:PageViews>
-                <aws:Users>0.9%</aws:Users>
+                <aws:Users>0.7%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="SA">
-              <aws:Rank>3</aws:Rank>
+            <aws:Country Code="CH">
+              <aws:Rank>49</aws:Rank>
               <aws:Contribution>
                 <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>0.8%</aws:Users>
+                <aws:Users>0.5%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="PL">
-              <aws:Rank>4</aws:Rank>
+            <aws:Country Code="SE">
+              <aws:Rank>69</aws:Rank>
               <aws:Contribution>
                 <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>0.8%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="NG">
-              <aws:Rank>1</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.7%</aws:PageViews>
-                <aws:Users>0.8%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="AR">
-              <aws:Rank>3</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.3%</aws:PageViews>
                 <aws:Users>0.6%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="GB">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>53</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>1.9%</aws:PageViews>
-                <aws:Users>2.2%</aws:Users>
+                <aws:PageViews>3.6%</aws:PageViews>
+                <aws:Users>4.0%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="FR">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>75</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>1.7%</aws:PageViews>
-                <aws:Users>2.1%</aws:Users>
+                <aws:PageViews>2.5%</aws:PageViews>
+                <aws:Users>2.8%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="KR">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>60</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>0.6%</aws:PageViews>
-                <aws:Users>1.1%</aws:Users>
+                <aws:PageViews>3.1%</aws:PageViews>
+                <aws:Users>2.4%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="BR">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>151</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>1.2%</aws:PageViews>
-                <aws:Users>2.0%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="IT">
-              <aws:Rank>3</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>1.3%</aws:PageViews>
-                <aws:Users>1.6%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="ZA">
-              <aws:Rank>2</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>0.8%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="MX">
-              <aws:Rank>3</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.7%</aws:PageViews>
-                <aws:Users>1.2%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="QA">
-              <aws:Rank>1</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.5%</aws:PageViews>
-                <aws:Users>0.5%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="NL">
-              <aws:Rank>3</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>0.4%</aws:PageViews>
-                <aws:Users>0.7%</aws:Users>
-              </aws:Contribution>
-            </aws:Country>
-            <aws:Country Code="CA">
-              <aws:Rank>3</aws:Rank>
-              <aws:Contribution>
-                <aws:PageViews>1.0%</aws:PageViews>
+                <aws:PageViews>1.4%</aws:PageViews>
                 <aws:Users>1.5%</aws:Users>
               </aws:Contribution>
             </aws:Country>
-            <aws:Country Code="JP">
-              <aws:Rank>3</aws:Rank>
+            <aws:Country Code="IT">
+              <aws:Rank>72</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>3.7%</aws:PageViews>
-                <aws:Users>4.3%</aws:Users>
+                <aws:PageViews>2.2%</aws:PageViews>
+                <aws:Users>2.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="MX">
+              <aws:Rank>84</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>1.2%</aws:PageViews>
+                <aws:Users>1.3%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="NL">
+              <aws:Rank>71</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>0.8%</aws:PageViews>
+                <aws:Users>0.8%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="CA">
+              <aws:Rank>49</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>2.4%</aws:PageViews>
+                <aws:Users>2.5%</aws:Users>
+              </aws:Contribution>
+            </aws:Country>
+            <aws:Country Code="JP">
+              <aws:Rank>33</aws:Rank>
+              <aws:Contribution>
+                <aws:PageViews>11.0%</aws:PageViews>
+                <aws:Users>10.2%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="CN">
-              <aws:Rank>11</aws:Rank>
+              <aws:Rank>66</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>2.7%</aws:PageViews>
-                <aws:Users>3.9%</aws:Users>
+                <aws:PageViews>12.7%</aws:PageViews>
+                <aws:Users>9.8%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="O">
               <aws:Rank/>
               <aws:Contribution>
-                <aws:PageViews>12.7%</aws:PageViews>
-                <aws:Users>17.0%</aws:Users>
+                <aws:PageViews>11.3%</aws:PageViews>
+                <aws:Users>12.7%</aws:Users>
               </aws:Contribution>
             </aws:Country>
             <aws:Country Code="DE">
-              <aws:Rank>3</aws:Rank>
+              <aws:Rank>87</aws:Rank>
               <aws:Contribution>
-                <aws:PageViews>1.2%</aws:PageViews>
-                <aws:Users>1.9%</aws:Users>
+                <aws:PageViews>2.8%</aws:PageViews>
+                <aws:Users>3.0%</aws:Users>
               </aws:Contribution>
             </aws:Country>
           </aws:RankByCountry>
@@ -360,31 +328,31 @@
                 <aws:Months>3</aws:Months>
               </aws:TimeRange>
               <aws:Rank>
-                <aws:Value>1</aws:Value>
-                <aws:Delta>0</aws:Delta>
+                <aws:Value>65</aws:Value>
+                <aws:Delta>+10</aws:Delta>
               </aws:Rank>
               <aws:Reach>
                 <aws:Rank>
-                  <aws:Value>2</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>64</aws:Value>
+                  <aws:Delta>+8</aws:Delta>
                 </aws:Rank>
                 <aws:PerMillion>
-                  <aws:Value>413,250</aws:Value>
-                  <aws:Delta>+0.57%</aws:Delta>
+                  <aws:Value>12,060</aws:Value>
+                  <aws:Delta>-13.38%</aws:Delta>
                 </aws:PerMillion>
               </aws:Reach>
               <aws:PageViews>
                 <aws:PerMillion>
-                  <aws:Value>85,009</aws:Value>
-                  <aws:Delta>-8.193%</aws:Delta>
+                  <aws:Value>949.4</aws:Value>
+                  <aws:Delta>-19.81%</aws:Delta>
                 </aws:PerMillion>
                 <aws:Rank>
-                  <aws:Value>1</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>94</aws:Value>
+                  <aws:Delta>14</aws:Delta>
                 </aws:Rank>
                 <aws:PerUser>
-                  <aws:Value>8.190</aws:Value>
-                  <aws:Delta>-8.696%</aws:Delta>
+                  <aws:Value>3.13</aws:Value>
+                  <aws:Delta>-7.396%</aws:Delta>
                 </aws:PerUser>
               </aws:PageViews>
             </aws:UsageStatistic>
@@ -393,31 +361,31 @@
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Rank>
-                <aws:Value>1</aws:Value>
-                <aws:Delta>0</aws:Delta>
+                <aws:Value>76</aws:Value>
+                <aws:Delta>+15</aws:Delta>
               </aws:Rank>
               <aws:Reach>
                 <aws:Rank>
-                  <aws:Value>2</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>69</aws:Value>
+                  <aws:Delta>+5</aws:Delta>
                 </aws:Rank>
                 <aws:PerMillion>
-                  <aws:Value>413,870</aws:Value>
-                  <aws:Delta>+2.29%</aws:Delta>
+                  <aws:Value>10,760</aws:Value>
+                  <aws:Delta>-13.61%</aws:Delta>
                 </aws:PerMillion>
               </aws:Reach>
               <aws:PageViews>
                 <aws:PerMillion>
-                  <aws:Value>84,760</aws:Value>
-                  <aws:Delta>+4.22%</aws:Delta>
+                  <aws:Value>865.9</aws:Value>
+                  <aws:Delta>-11.15%</aws:Delta>
                 </aws:PerMillion>
                 <aws:Rank>
-                  <aws:Value>1</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>101</aws:Value>
+                  <aws:Delta>10</aws:Delta>
                 </aws:Rank>
                 <aws:PerUser>
-                  <aws:Value>7.960</aws:Value>
-                  <aws:Delta>+1.9%</aws:Delta>
+                  <aws:Value>3.13</aws:Value>
+                  <aws:Delta>+3.0%</aws:Delta>
                 </aws:PerUser>
               </aws:PageViews>
             </aws:UsageStatistic>
@@ -426,31 +394,31 @@
                 <aws:Days>7</aws:Days>
               </aws:TimeRange>
               <aws:Rank>
-                <aws:Value>1</aws:Value>
-                <aws:Delta>0</aws:Delta>
+                <aws:Value>79</aws:Value>
+                <aws:Delta>+3</aws:Delta>
               </aws:Rank>
               <aws:Reach>
                 <aws:Rank>
-                  <aws:Value>2</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>73</aws:Value>
+                  <aws:Delta>+2</aws:Delta>
                 </aws:Rank>
                 <aws:PerMillion>
-                  <aws:Value>411,600</aws:Value>
-                  <aws:Delta>-1.63%</aws:Delta>
+                  <aws:Value>10,100</aws:Value>
+                  <aws:Delta>-6.642%</aws:Delta>
                 </aws:PerMillion>
               </aws:Reach>
               <aws:PageViews>
                 <aws:PerMillion>
-                  <aws:Value>85,384</aws:Value>
-                  <aws:Delta>-3.30%</aws:Delta>
+                  <aws:Value>807</aws:Value>
+                  <aws:Delta>-10.79%</aws:Delta>
                 </aws:PerMillion>
                 <aws:Rank>
-                  <aws:Value>1</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>109</aws:Value>
+                  <aws:Delta>10</aws:Delta>
                 </aws:Rank>
                 <aws:PerUser>
-                  <aws:Value>7.910</aws:Value>
-                  <aws:Delta>-1.74%</aws:Delta>
+                  <aws:Value>3.05</aws:Value>
+                  <aws:Delta>-4.39%</aws:Delta>
                 </aws:PerUser>
               </aws:PageViews>
             </aws:UsageStatistic>
@@ -459,376 +427,246 @@
                 <aws:Days>1</aws:Days>
               </aws:TimeRange>
               <aws:Rank>
-                <aws:Value>2</aws:Value>
-                <aws:Delta>0</aws:Delta>
+                <aws:Value>81</aws:Value>
+                <aws:Delta>+4</aws:Delta>
               </aws:Rank>
               <aws:Reach>
                 <aws:Rank>
-                  <aws:Value>2</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>74</aws:Value>
+                  <aws:Delta>+4</aws:Delta>
                 </aws:Rank>
                 <aws:PerMillion>
-                  <aws:Value>393,500</aws:Value>
-                  <aws:Delta>+0.04%</aws:Delta>
+                  <aws:Value>9,450</aws:Value>
+                  <aws:Delta>-4.20%</aws:Delta>
                 </aws:PerMillion>
               </aws:Reach>
               <aws:PageViews>
                 <aws:PerMillion>
-                  <aws:Value>72,330</aws:Value>
-                  <aws:Delta>+2.3%</aws:Delta>
+                  <aws:Value>771</aws:Value>
+                  <aws:Delta>-4.66%</aws:Delta>
                 </aws:PerMillion>
                 <aws:Rank>
-                  <aws:Value>1</aws:Value>
-                  <aws:Delta>0</aws:Delta>
+                  <aws:Value>113</aws:Value>
+                  <aws:Delta>7</aws:Delta>
                 </aws:Rank>
                 <aws:PerUser>
-                  <aws:Value>6.820</aws:Value>
-                  <aws:Delta>+2.2%</aws:Delta>
+                  <aws:Value>3.03</aws:Value>
+                  <aws:Delta>-0.33%</aws:Delta>
                 </aws:PerUser>
               </aws:PageViews>
             </aws:UsageStatistic>
           </aws:UsageStatistics>
           <aws:ContributingSubdomains>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>google.com</aws:DataUrl>
+              <aws:DataUrl>apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>60.44%</aws:Percentage>
+                <aws:Percentage>41.98%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>55.50%</aws:Percentage>
-                <aws:PerUser>7.310</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>mail.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>43.45%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>20.82%</aws:Percentage>
-                <aws:PerUser>3.81</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>docs.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>13.36%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>5.68%</aws:Percentage>
+                <aws:Percentage>45.34%</aws:Percentage>
                 <aws:PerUser>3.38</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>accounts.google.com</aws:DataUrl>
+              <aws:DataUrl>support.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>22.03%</aws:Percentage>
+                <aws:Percentage>27.74%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>5.34%</aws:Percentage>
-                <aws:PerUser>1.93</aws:PerUser>
+                <aws:Percentage>15.65%</aws:Percentage>
+                <aws:PerUser>1.76</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>drive.google.com</aws:DataUrl>
+              <aws:DataUrl>itunes.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>11.15%</aws:Percentage>
+                <aws:Percentage>30.35%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>2.60%</aws:Percentage>
-                <aws:PerUser>1.86</aws:PerUser>
+                <aws:Percentage>13.73%</aws:Percentage>
+                <aws:PerUser>1.41</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>translate.google.com</aws:DataUrl>
+              <aws:DataUrl>discussions.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>4.58%</aws:Percentage>
+                <aws:Percentage>8.62%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>1.87%</aws:Percentage>
-                <aws:PerUser>3.25</aws:PerUser>
+                <aws:Percentage>3.97%</aws:Percentage>
+                <aws:PerUser>1.44</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>calendar.google.com</aws:DataUrl>
+              <aws:DataUrl>developer.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>4.10%</aws:Percentage>
+                <aws:Percentage>3.76%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.99%</aws:Percentage>
-                <aws:PerUser>1.93</aws:PerUser>
+                <aws:Percentage>3.65%</aws:Percentage>
+                <aws:PerUser>3.04</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>analytics.google.com</aws:DataUrl>
+              <aws:DataUrl>itunesconnect.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>1.18%</aws:Percentage>
+                <aws:Percentage>2.15%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.98%</aws:Percentage>
-                <aws:PerUser>6.590</aws:PerUser>
+                <aws:Percentage>2.78%</aws:Percentage>
+                <aws:PerUser>4.06</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>myaccount.google.com</aws:DataUrl>
+              <aws:DataUrl>store.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>3.44%</aws:Percentage>
+                <aws:Percentage>2.90%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.67%</aws:Percentage>
-                <aws:PerUser>1.55</aws:PerUser>
+                <aws:Percentage>2.46%</aws:Percentage>
+                <aws:PerUser>2.65</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>support.google.com</aws:DataUrl>
+              <aws:DataUrl>appleid.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>2.95%</aws:Percentage>
+                <aws:Percentage>4.13%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.54%</aws:Percentage>
-                <aws:PerUser>1.45</aws:PerUser>
+                <aws:Percentage>2.27%</aws:Percentage>
+                <aws:PerUser>1.72</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>play.google.com</aws:DataUrl>
+              <aws:DataUrl>idmsa.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>2.48%</aws:Percentage>
+                <aws:Percentage>3.71%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.46%</aws:Percentage>
-                <aws:PerUser>1.46</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>adwords.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.58%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.45%</aws:Percentage>
-                <aws:PerUser>6.06</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>sites.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>1.39%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.38%</aws:Percentage>
-                <aws:PerUser>2.18</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>plus.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>1.56%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.34%</aws:Percentage>
-                <aws:PerUser>1.75</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>photos.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>1.31%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.32%</aws:Percentage>
-                <aws:PerUser>1.92</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>classroom.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>1.25%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.24%</aws:Percentage>
-                <aws:PerUser>1.51</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>url.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.85%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.22%</aws:Percentage>
-                <aws:PerUser>2.06</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>news.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>1.38%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.22%</aws:Percentage>
+                <aws:Percentage>1.48%</aws:Percentage>
                 <aws:PerUser>1.25</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>notifications.google.com</aws:DataUrl>
+              <aws:DataUrl>iforgot.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.28%</aws:Percentage>
+                <aws:Percentage>3.35%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.21%</aws:Percentage>
-                <aws:PerUser>5.89</aws:PerUser>
+                <aws:Percentage>1.44%</aws:Percentage>
+                <aws:PerUser>1.34</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>hangouts.google.com</aws:DataUrl>
+              <aws:DataUrl>getsupport.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.73%</aws:Percentage>
+                <aws:Percentage>2.80%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.19%</aws:Percentage>
-                <aws:PerUser>2.01</aws:PerUser>
+                <aws:Percentage>1.28%</aws:Percentage>
+                <aws:PerUser>1.43</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>inbox.google.com</aws:DataUrl>
+              <aws:DataUrl>trailers.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.78%</aws:Percentage>
+                <aws:Percentage>0.69%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.14%</aws:Percentage>
-                <aws:PerUser>1.46</aws:PerUser>
+                <aws:Percentage>0.79%</aws:Percentage>
+                <aws:PerUser>3.59</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>ipv4.google.com</aws:DataUrl>
+              <aws:DataUrl>help.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.53%</aws:Percentage>
+                <aws:Percentage>1.24%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.14%</aws:Percentage>
-                <aws:PerUser>2.10</aws:PerUser>
+                <aws:Percentage>0.51%</aws:Percentage>
+                <aws:PerUser>1.28</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>apis.google.com</aws:DataUrl>
+              <aws:DataUrl>jobs.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.31%</aws:Percentage>
+                <aws:Percentage>0.44%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.14%</aws:Percentage>
-                <aws:PerUser>3.53</aws:PerUser>
+                <aws:Percentage>0.49%</aws:Percentage>
+                <aws:PerUser>3.49</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>scholar.google.com</aws:DataUrl>
+              <aws:DataUrl>checkcoverage.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.58%</aws:Percentage>
+                <aws:Percentage>0.98%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
+                <aws:Percentage>0.47%</aws:Percentage>
+                <aws:PerUser>1.5</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>ecommerce.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
                 <aws:Percentage>0.12%</aws:Percentage>
-                <aws:PerUser>1.67</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>developers.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.35%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.10%</aws:Percentage>
-                <aws:PerUser>2.27</aws:PerUser>
+                <aws:Percentage>0.28%</aws:Percentage>
+                <aws:PerUser>7.2</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>business.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.16%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.09%</aws:Percentage>
-                <aws:PerUser>4.32</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>keep.google.com</aws:DataUrl>
+              <aws:DataUrl>locate.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
@@ -836,12 +674,168 @@
                 <aws:Percentage>0.50%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.09%</aws:Percentage>
-                <aws:PerUser>1.36</aws:PerUser>
+                <aws:Percentage>0.23%</aws:Percentage>
+                <aws:PerUser>1.4</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>encrypted.google.com</aws:DataUrl>
+              <aws:DataUrl>discussionsjapan.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.49%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.21%</aws:Percentage>
+                <aws:PerUser>1.3</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>images.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.53%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.20%</aws:Percentage>
+                <aws:PerUser>1.2</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>reportingitc2.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.30%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.20%</aws:Percentage>
+                <aws:PerUser>2.0</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>id.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.25%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.14%</aws:Percentage>
+                <aws:PerUser>1.8</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>chatsupport.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.31%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.10%</aws:Percentage>
+                <aws:PerUser>1.0</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>podcastsconnect.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.13%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.10%</aws:Percentage>
+                <aws:PerUser>2.3</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>secure-appldnld.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.26%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>1.1</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>gsxapp.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.07%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>4.4</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>searchads.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.09%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>3.1</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>communities.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.19%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>1.5</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>beta.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.10%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>2.8</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>reportaproblem.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.27%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.09%</aws:Percentage>
+                <aws:PerUser>1.0</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>mypage.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
@@ -850,76 +844,63 @@
               </aws:Reach>
               <aws:PageViews>
                 <aws:Percentage>0.08%</aws:Percentage>
-                <aws:PerUser>7.03</aws:PerUser>
+                <aws:PerUser>2.8</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>contacts.google.com</aws:DataUrl>
+              <aws:DataUrl>ara.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.39%</aws:Percentage>
+                <aws:Percentage>0.10%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.08%</aws:Percentage>
+                <aws:PerUser>2.5</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>mysupport.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.14%</aws:Percentage>
+              </aws:Reach>
+              <aws:PageViews>
+                <aws:Percentage>0.07%</aws:Percentage>
+                <aws:PerUser>1.6</aws:PerUser>
+              </aws:PageViews>
+            </aws:ContributingSubdomain>
+            <aws:ContributingSubdomain>
+              <aws:DataUrl>documentation.apple.com</aws:DataUrl>
+              <aws:TimeRange>
+                <aws:Months>1</aws:Months>
+              </aws:TimeRange>
+              <aws:Reach>
+                <aws:Percentage>0.09%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
                 <aws:Percentage>0.06%</aws:Percentage>
-                <aws:PerUser>1.15</aws:PerUser>
+                <aws:PerUser>1.9</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>productforums.google.com</aws:DataUrl>
+              <aws:DataUrl>gsx.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.34%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.06%</aws:Percentage>
-                <aws:PerUser>1.34</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>search.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.20%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.06%</aws:Percentage>
-                <aws:PerUser>2.20</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>cse.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.25%</aws:Percentage>
+                <aws:Percentage>0.07%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
                 <aws:Percentage>0.05%</aws:Percentage>
-                <aws:PerUser>1.74</aws:PerUser>
+                <aws:PerUser>2.3</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>aboutme.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.34%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.05%</aws:Percentage>
-                <aws:PerUser>1.29</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>cloud.google.com</aws:DataUrl>
+              <aws:DataUrl>discussionschinese.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
@@ -928,46 +909,20 @@
               </aws:Reach>
               <aws:PageViews>
                 <aws:Percentage>0.05%</aws:Percentage>
-                <aws:PerUser>3.23</aws:PerUser>
+                <aws:PerUser>1.3</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
-              <aws:DataUrl>books.google.com</aws:DataUrl>
+              <aws:DataUrl>aoschat.apple.com</aws:DataUrl>
               <aws:TimeRange>
                 <aws:Months>1</aws:Months>
               </aws:TimeRange>
               <aws:Reach>
-                <aws:Percentage>0.32%</aws:Percentage>
+                <aws:Percentage>0.17%</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
                 <aws:Percentage>0.05%</aws:Percentage>
-                <aws:PerUser>1.29</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>groups.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.27%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.05%</aws:Percentage>
-                <aws:PerUser>1.50</aws:PerUser>
-              </aws:PageViews>
-            </aws:ContributingSubdomain>
-            <aws:ContributingSubdomain>
-              <aws:DataUrl>admin.google.com</aws:DataUrl>
-              <aws:TimeRange>
-                <aws:Months>1</aws:Months>
-              </aws:TimeRange>
-              <aws:Reach>
-                <aws:Percentage>0.14%</aws:Percentage>
-              </aws:Reach>
-              <aws:PageViews>
-                <aws:Percentage>0.05%</aws:Percentage>
-                <aws:PerUser>2.86</aws:PerUser>
+                <aws:PerUser>1.0</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
             <aws:ContributingSubdomain>
@@ -979,7 +934,7 @@
                 <aws:Percentage>0</aws:Percentage>
               </aws:Reach>
               <aws:PageViews>
-                <aws:Percentage>0.64%</aws:Percentage>
+                <aws:Percentage>1.24%</aws:Percentage>
                 <aws:PerUser>0</aws:PerUser>
               </aws:PageViews>
             </aws:ContributingSubdomain>
