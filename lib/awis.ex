@@ -25,7 +25,6 @@ defmodule AWIS do
     Enum.each(urls, &get_data_for_single_url/1)
   end
 
-
   #####################
   # PRIVATE FUNCTIONS #
   #####################
@@ -34,7 +33,6 @@ defmodule AWIS do
     # TODO make the rest of the API calls here if needed
     :ok
   end
-
 
   defp url_info(url) do
     params = %{
@@ -94,13 +92,17 @@ defmodule AWIS do
 
   # TODO this is bad, pls replace with something cleaner
   defp increment_counter do
-    count = File.read!(@request_counter_file)
+    count =
+      File.read!(@request_counter_file)
       |> String.trim()
       |> String.to_integer()
+
     new_count = count + 1
+
     if new_count > @request_limit do
       raise "YOU'VE RUN OUT OF FREE REQUESTS! THINK OF YOUR WALLET!"
     end
+
     File.write!(@request_counter_file, to_string(count + 1))
   end
 end
