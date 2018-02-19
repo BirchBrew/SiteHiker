@@ -36,7 +36,7 @@ defmodule AWIS do
   end
 
 
-  def url_info(url) do
+  defp url_info(url) do
     params = %{
       Action: "UrlInfo",
       Url: url,
@@ -93,7 +93,7 @@ defmodule AWIS do
   end
 
   # TODO this is bad, pls replace with something cleaner
-  def increment_counter do
+  defp increment_counter do
     count = File.read!(@request_counter_file)
       |> String.trim()
       |> String.to_integer()
