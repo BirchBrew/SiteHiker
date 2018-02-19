@@ -1,9 +1,11 @@
 defmodule AWIS do
   @data_dir "data"
+  @request_counter_file "request_counter.txt"
+  @request_limit 1000
 
   @awis_url "https://awis.amazonaws.com/api"
   @region "us-east-1"
-  @response_groups ~w(
+  @url_info_response_groups ~w(
     Categories
     Rank
     RankByCountry
@@ -19,28 +21,52 @@ defmodule AWIS do
   ##############
   # PUBLIC API #
   ##############
-  def url_info(url) do
-    params = %{
-      Action: "UrlInfo",
-      Url: url,
-      ResponseGroup: @response_groups
-    }
-    download_data(url, params)
+  def get_data_for_urls(urls) when is_list(urls) do
+    Enum.each(urls, &get_data_for_single_url/1)
   end
+
 
   #####################
   # PRIVATE FUNCTIONS #
   #####################
-  defp download_data(url, params) do
-    path = Path.join(@data_dir, "#{url}.xml")
-    file = File.open!(path, [:write])
+  defp get_data_for_single_url(url) do
+    url_info(url)
+    # TODO make the rest of the API calls here if needed
+    :ok
+  end
+
+
+  def url_info(url) do
+    params = %{
+      Action: "UrlInfo",
+      Url: url,
+      ResponseGroup: @url_info_response_groups
+    }
+
+    download_data(:url_info, url, params)
+  end
+
+  defp download_data(type_of_data, url, params) do
+    data_output_file = open_data_output_file(type_of_data, url)
     data = fetch_data(params)
-    IO.binwrite(file, data)
-    File.close(file)
+    IO.binwrite(data_output_file, data)
+    File.close(data_output_file)
+  end
+
+  defp open_data_output_file(type_of_data, url) do
+    url_specific_data_path = Path.join(@data_dir, url)
+
+    unless File.exists?(url_specific_data_path) do
+      File.mkdir!(url_specific_data_path)
+    end
+
+    download_filepath = Path.join(url_specific_data_path, "#{type_of_data}.xml")
+    File.open!(download_filepath, [:write])
   end
 
   defp fetch_data(params) do
     full_url = build_full_url(params)
+    increment_counter()
     HTTPoison.get!(full_url, signed_request_headers(full_url))
   end
 
@@ -49,15 +75,32 @@ defmodule AWIS do
   end
 
   defp signed_request_headers(url) do
+    [access_key, secret] =
+      Path.join("secrets", "keys.csv")
+      |> File.read!()
+      |> String.split(",")
+
     {:ok, %{} = sig_data, _} =
       Sigaws.sign_req(
         url,
         region: @region,
         service: "awis",
-        access_key: System.get_env("AWS_ACCESS_KEY_ID"),
-        secret: System.get_env("AWS_SECRET_ACCESS_KEY")
+        access_key: access_key,
+        secret: secret
       )
 
     sig_data
+  end
+
+  # TODO this is bad, pls replace with something cleaner
+  def increment_counter do
+    count = File.read!(@request_counter_file)
+      |> String.trim()
+      |> String.to_integer()
+    new_count = count + 1
+    if new_count > @request_limit do
+      raise "YOU'VE RUN OUT OF FREE REQUESTS! THINK OF YOUR WALLET!"
+    end
+    File.write!(@request_counter_file, to_string(count + 1))
   end
 end
