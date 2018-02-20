@@ -1,3 +1,5 @@
+require Logger
+
 defmodule BlueHarvest.Application do
   use Application
 
@@ -9,6 +11,8 @@ defmodule BlueHarvest.Application do
       # Define workers and child supervisors to be supervised
       Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Web.Router, options: [port: @port])
     ]
+
+    Logger.info("Router listening on port #{@port}")
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
