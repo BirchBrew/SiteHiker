@@ -12,7 +12,7 @@ defmodule BlueHarvest.Application do
       Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Router, options: [port: @port])
     ]
 
-    Logger.info("Router listening on port #{@port}")
+    Logger.info("Router listening at http://localhost:#{@port}")
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options

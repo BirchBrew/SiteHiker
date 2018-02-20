@@ -12,6 +12,7 @@
   function resetInput() {
     input.select()
     submit.removeAttribute("disabled")
+    submit.textContent = "GO"
   }
 
   function createSitelist() {
@@ -30,6 +31,7 @@
       return
     }
     submit.setAttribute("disabled", true)
+    submit.textContent = "Thinking..."
     fetch(site).then(response => {
       return response.json()
     }).then(data => {
