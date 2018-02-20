@@ -1,5 +1,5 @@
 defmodule AWIS do
-  @data_dir "data"
+  @data_dir "awis_data"
   @request_counter_file "request_counter.txt"
   @request_limit 1000
 

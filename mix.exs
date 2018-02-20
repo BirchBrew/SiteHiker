@@ -1,9 +1,9 @@
-defmodule AWIS.MixProject do
+defmodule BlueHarvest.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :awis,
+      app: :blue_harvest,
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
@@ -14,6 +14,8 @@ defmodule AWIS.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {BlueHarvest.Application, []},
+      applications: [:cowboy, :plug, :httpoison],
       extra_applications: [:logger]
     ]
   end
@@ -23,12 +25,23 @@ defmodule AWIS.MixProject do
     [
       # HTTP Client
       {:httpoison, "~> 1.0"},
+      # HTTP Web server
+      {:cowboy, "~> 1.1"},
+      # Plug is:
+      #   1. A specification for composable modules between web applications
+      #   2. Connection adapters for different web servers in the Erlang VM
+      {:plug, "~> 1.4.5"},
+      # JSON encoding/decoding
+      {:poison, "~> 3.1"},
+      # HTML Parse/Search/Select
+      {:floki, "~> 0.20.0"},
+      ######################################################
+      # Deps listed below are only needed for the AWIS API #
+      ######################################################
       # AWS Request Signing
       {:sigaws, "~> 0.7"},
       # XML Parser
-      {:quinn, "~> 1.1.2"},
-      # HTML Parse/Search/Select
-      {:floki, "~> 0.20.0"}
+      {:quinn, "~> 1.1.2"}
     ]
   end
 end

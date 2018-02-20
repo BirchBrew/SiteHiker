@@ -1,4 +1,4 @@
-defmodule AlexaScraper do
+defmodule Data.AlexaScraper do
   @site_info_url "https://www.alexa.com/siteinfo"
 
   def get_sites_similar_to(site) do
