@@ -9,7 +9,7 @@ defmodule BlueHarvest.Application do
     # List all child processes to be supervised
     children = [
       # Define workers and child supervisors to be supervised
-      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Web.Router, options: [port: @port])
+      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Router, options: [port: @port])
     ]
 
     Logger.info("Router listening on port #{@port}")

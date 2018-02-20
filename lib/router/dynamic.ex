@@ -1,15 +1,9 @@
-defmodule Web.Router do
+defmodule Router.Dynamic do
   use Plug.Router
   import Data.AlexaScraper
 
-  @page File.read!("static/page.html")
-
   plug(:match)
   plug(:dispatch)
-
-  get "/" do
-    send_resp(conn, 200, @page)
-  end
 
   get "/:site" do
     conn
