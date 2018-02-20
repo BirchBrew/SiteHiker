@@ -6,9 +6,10 @@ defmodule Router.Dynamic do
   plug(:dispatch)
 
   get "/:site" do
+    related_sites_json = Poison.encode!(%{relatedSites: get_sites_similar_to(site)})
     conn
     |> put_resp_content_type("text/json")
-    |> send_resp(200, Poison.encode!(%{related_sites: get_sites_similar_to(site)}))
+    |> send_resp(200, related_sites_json)
   end
 
   match _ do
