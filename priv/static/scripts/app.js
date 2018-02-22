@@ -39,7 +39,7 @@
     }
     submit.setAttribute("disabled", true)
     submit.textContent = "Thinking..."
-    fetch(site).then(response => {
+    fetch(`/lookup?site=${encodeURIComponent(site)}`).then(response => {
       return response.json()
     }).then(data => {
       const {

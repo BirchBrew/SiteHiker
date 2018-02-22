@@ -32,9 +32,11 @@ defmodule BlueHarvest.MixProject do
       #   2. Connection adapters for different web servers in the Erlang VM
       {:plug, "~> 1.4.5"},
       # JSON encoding/decoding
-      {:poison, "~> 3.1"},
+      {:jason, "~> 1.0"},
       # HTML Parse/Search/Select
       {:floki, "~> 0.20.0"},
+      # Help us properly distill links down the vital "host + top-level-domain"
+      {:domainatrex, "~> 2.1.2"},
       ######################################################
       # Deps listed below are only needed for the AWIS API #
       ######################################################
