@@ -86,13 +86,13 @@ defmodule Data.AlexaSimilarSites do
     Map.merge(ranks, host_rank_mapping) |> Map.merge(similar_rank_mappings)
   end
 
-  def get_site_overlap_tuples(similar_sites) do
+  defp get_site_overlap_tuples(similar_sites) do
     Enum.map(similar_sites, fn site_entry ->
       {site_entry["site2"], site_entry["overlap_score"]}
     end)
   end
 
-  def update_similar(similar, host, similar_sites_data) do
+  defp update_similar(similar, host, similar_sites_data) do
     Map.put(similar, host, similar_sites_data)
   end
 
