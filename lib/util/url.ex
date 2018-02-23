@@ -6,6 +6,8 @@ defmodule Util.URL do
   #      somebody searches `en.wikipedia.org`, Alexa returns `wikipedia.org` results, we cache those
   #      under
   def parse(url) do
+    url = String.downcase(url)
+
     domain =
       case URI.parse(url) do
         %{host: nil, path: path} ->
