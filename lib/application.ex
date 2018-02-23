@@ -9,7 +9,8 @@ defmodule BlueHarvest.Application do
     # List all child processes to be supervised
     children = [
       # Define workers and child supervisors to be supervised
-      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Router, options: [port: @port])
+      Plug.Adapters.Cowboy.child_spec(scheme: :http, plug: Router, options: [port: @port]),
+      Data.AlexaSimilarSites
     ]
 
     Logger.info("Router listening at http://localhost:#{@port}")
