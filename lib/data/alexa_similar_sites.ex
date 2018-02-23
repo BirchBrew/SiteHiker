@@ -39,29 +39,21 @@ defmodule Data.AlexaSimilarSites do
     case Map.get(similar, host) do
       nil ->
         Logger.info("Cache miss for '#{host}'. Fetching from Alexa...")
-        {site_data, similar_sites} = fetch_data_from_alexa(host)
-        site_ranking = %{host => site_data["alexa_rank"]}
 
-        similar_site_rankings =
-          Enum.reduce(similar_sites, %{}, fn site_entry, rankings ->
-            Map.put(rankings, site_entry["site2"], site_entry["alexa_rank"])
-          end)
+        {host_rank_mapping, similar_sites_data} = fetch_data_from_alexa(host)
+        similar_rank_mappings = get_rank_mappings(similar_sites_data)
+        ranks = update_rankings(ranks, host_rank_mapping, similar_rank_mappings)
 
-        ranks = Map.merge(ranks, site_ranking) |> Map.merge(similar_site_rankings)
+        similar_site_overlap_tuples = get_site_overlap_tuples(similar_sites_data)
+        similar = update_similar(similar, host, similar_site_overlap_tuples)
 
-        similar_sites_data =
-          Enum.map(similar_sites, fn site_entry ->
-            {site_entry["site2"], site_entry["overlap_score"]}
-          end)
-
-        similar = Map.put(similar, host, similar_sites_data)
         state = {similar, ranks}
         save_state(state)
-        {:reply, similar_sites_data, state}
+        {:reply, similar_site_overlap_tuples, state}
 
-      similar_sites_data ->
+      similar_site_overlap_tuples ->
         Logger.info("Serving '#{host}' data from cache")
-        {:reply, similar_sites_data, state}
+        {:reply, similar_site_overlap_tuples, state}
     end
   end
 
@@ -84,6 +76,26 @@ defmodule Data.AlexaSimilarSites do
     File.write!(@state_file, binary_state)
   end
 
+  defp get_rank_mappings(similar_sites) do
+    Enum.reduce(similar_sites, %{}, fn site_entry, rankings ->
+      Map.put(rankings, site_entry["site2"], site_entry["alexa_rank"])
+    end)
+  end
+
+  defp update_rankings(ranks, host_rank_mapping, similar_rank_mappings) do
+    Map.merge(ranks, host_rank_mapping) |> Map.merge(similar_rank_mappings)
+  end
+
+  def get_site_overlap_tuples(similar_sites) do
+    Enum.map(similar_sites, fn site_entry ->
+      {site_entry["site2"], site_entry["overlap_score"]}
+    end)
+  end
+
+  def update_similar(similar, host, similar_sites_data) do
+    Map.put(similar, host, similar_sites_data)
+  end
+
   defp fetch_data_from_alexa(host) do
     results =
       HTTPoison.get!(@site_info_url <> host, %{}, recv_timeout: @timeout_ms)
@@ -93,6 +105,7 @@ defmodule Data.AlexaSimilarSites do
       |> Enum.filter(&Map.has_key?(&1, "site2"))
 
     [site_data = %{"site2" => ^host} | similar_sites] = results
-    {site_data, similar_sites}
+    rank_mapping = %{host => site_data["alexa_rank"]}
+    {rank_mapping, similar_sites}
   end
 end
