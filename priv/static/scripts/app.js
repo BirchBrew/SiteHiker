@@ -16,20 +16,35 @@
     submit.textContent = "GO"
   }
 
+  function makeXImage() {
+    const x = new Image(10, 10)
+    x.src = "images/x.png"
+    return x
+  }
+
   function createSitelist() {
     siteList.innerHTML = ''
-    unknown_sites = sites.filter(site => known_sites.includes(site) === false);
+    unknown_sites = sites.filter(site => known_sites.includes(site) === false)
     for (const site of unknown_sites) {
       const item = document.createElement("li")
+      const anchor = document.createElement("a")
+      anchor.setAttribute("href", `http://${site}`)
+      anchor.setAttribute("target", "_blank")
+      anchor.setAttribute("rel", "noopener noreferrer")
       const text = document.createTextNode(site)
-      item.appendChild(text)
+      anchor.appendChild(text)
+      item.appendChild(anchor)
+      const x = makeXImage();
+      item.appendChild(x)
       siteList.appendChild(item)
 
-      item.onclick = function () {
+      x.onclick = function () {
+        item.remove()
         const siteName = text.textContent
         known_sites.push(siteName)
+        input.value = siteName
         fetchSites(siteName)
-      };
+      }
     }
   }
 
