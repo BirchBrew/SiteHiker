@@ -6,17 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/rc.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Site Recommender</h1>
-  <input id="input" type="text" value="google.com" autofocus="true">
-  <button id="submit">GO</button>
-  <hr>
-  <ul id="site-list"></ul>
+  <div id="rc">
+    <div id="wrapper">
+      <div id="up">
+        <p id="upSite"></p>
+        <img id="up" src="images/up.png" />
+      </div>
 
-  <script src="scripts/app.js"></script>
+      <div id="left">
+        <img id="left" src="images/left.png" />
+        <p id="leftSite"></p>
+      </div>
+
+      <div id="center">
+        <p id="currentSite"></p>
+      </div>
+
+      <div id="right">
+        <img id="right" src="images/right.png" />
+        <p id="rightSite"></p>
+      </div>
+
+      <div id="down">
+        <img id="down" src="images/down.png" />
+        <p id="downSite"></p>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="scripts/app.js"></script>
 </body>
 
 </html>

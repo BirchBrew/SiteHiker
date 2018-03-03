@@ -1,87 +1,109 @@
-(function IIFE() {
-  // Selectors
-  const input = document.querySelector("#input")
-  const siteList = document.querySelector("#site-list")
-  const submit = document.querySelector("#submit")
+// (function IIFE() {
 
-  const sites = []
-  const known_sites = []
+// Selectors
+const controls = {
+  up: {
+    label: document.querySelector("#upSite"),
+    button: document.querySelector("#up"),
+  },
+  left: {
+    label: document.querySelector("#leftSite"),
+    button: document.querySelector("#left"),
+  },
+  current: {
+    label: document.querySelector("#currentSite"),
+    button: document.querySelector("#current"),
+  },
+  right: {
+    label: document.querySelector("#rightSite"),
+    button: document.querySelector("#right"),
+  },
+  down: {
+    label: document.querySelector("#downSite"),
+    button: document.querySelector("#down"),
+  },
+}
 
-  resetInput()
-
-  // Logic
-  function resetInput() {
-    input.select()
-    submit.removeAttribute("disabled")
-    submit.textContent = "GO"
+// Siteroom stuff
+const DIRECTIONS = ["left", "right", "up", "down"]
+function oppositeDirection(direction) {
+  switch (direction) {
+    case "left":
+      return "right";
+    case "right":
+      return "left";
+    case "up":
+      return "down";
+    case "down":
+      return "up";
   }
-
-  function makeXImage() {
-    const x = new Image(10, 10)
-    x.src = "images/x.png"
-    return x
-  }
-
-  function createSitelist() {
-    siteList.innerHTML = ''
-    unknown_sites = sites.filter(site => known_sites.includes(site) === false)
-    for (const site of unknown_sites) {
-      const item = document.createElement("li")
-      const anchor = document.createElement("a")
-      anchor.setAttribute("href", `http://${site}`)
-      anchor.setAttribute("target", "_blank")
-      anchor.setAttribute("rel", "noopener noreferrer")
-      const text = document.createTextNode(site)
-      anchor.appendChild(text)
-      item.appendChild(anchor)
-      const x = makeXImage();
-      item.appendChild(x)
-      siteList.appendChild(item)
-
-      x.onclick = function () {
-        item.remove()
-        const siteName = text.textContent
-        known_sites.push(siteName)
-        input.value = siteName
-        fetchSites(siteName)
-      }
+}
+class Site {
+  constructor(name, { prev, direction } = {}) {
+    this.name = name
+    if (direction) {
+      this[direction] = prev
     }
+    this.setRelatedSites()
   }
-
-  function fetchSites(site) {
-    if (site === '') {
-      return
-    }
-    submit.setAttribute("disabled", true)
-    submit.textContent = "Thinking..."
-    fetch(`/lookup?site=${encodeURIComponent(site)}`).then(response => {
-      return response.json()
-    }).then(data => {
-      const {
-        relatedSites
-      } = data
-      for (const site of relatedSites) {
-        if (!sites.includes(site)) {
-          sites.push(site)
-        }
-        sites.sort()
-        createSitelist()
+  setRelatedSites() {
+    fetchSites(this.name).then(sites => {
+      sites = sites.filter(s => Site.isUndiscovered(s))
+      sites.forEach(s => Site.addSite(s))
+      for (const direction of DIRECTIONS) {
+        this[direction] = this[direction] || { name: sites.pop() }
+        controls[direction].label.textContent = this[direction].name
+        controls[direction].button.hidden = !this[direction].name
       }
-    }).catch((err => {
-      console.error(err)
-    })).then(() => {
-      resetInput()
     })
   }
-
-  function fetchSitesTextbox() {
-    fetchSites(input.value.trim())
-  }
-
-  input.addEventListener("keydown", e => {
-    if (e.keyCode === 13) {
-      fetchSitesTextbox()
+  move(moveDirection) {
+    let nextCurrent = this[moveDirection]
+    if (!(nextCurrent instanceof Site)) {
+      // make nextCurrent is a proper Site object
+      nextCurrent = new Site(nextCurrent.name, { prev: this, direction: oppositeDirection(moveDirection) })
+      // update current site's neighbor reference to hold proper Site object
+      this[moveDirection] = nextCurrent
+    } else {
+      for (const direction of DIRECTIONS) {
+        const name = nextCurrent[direction].name
+        controls[direction].label.textContent = name
+        controls[direction].button.hidden = !name
+      }
     }
+    controls.current.label.textContent = nextCurrent.name
+    return nextCurrent
+  }
+  static isUndiscovered(site) {
+    return !Site.sites.has(site)
+  }
+  static addSite(name) {
+    Site.sites.add(name)
+  }
+}
+Site.sites = new Set()
+
+// Initialization
+const siteName = location.hash && location.hash.slice(1) || "google.com"
+Site.addSite(siteName)
+let currentLocation = new Site(siteName)
+controls.current.label.textContent = siteName
+// Setup control button click handlers
+for (const direction of DIRECTIONS) {
+  controls[direction].button.addEventListener("click", () => {
+    currentLocation = currentLocation.move(direction)
   })
-  submit.addEventListener("click", fetchSitesTextbox)
-})()
+}
+
+// Logic
+function fetchSites(site) {
+  if (site === '') {
+    return
+  }
+  return fetch(`/lookup?site=${encodeURIComponent(site)}`).then(response => {
+    return response.json()
+  }).then(({ relatedSites }) => {
+    return relatedSites;
+  })
+}
+// })()
