@@ -1,4 +1,26 @@
-img {
-  padding: 0px 0px 0px 10px;
-  cursor: pointer;
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#labels {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+  color: white;
+  font-family: sans-serif;
+}
+
+#controls {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 1;
+  color: white;
+  font-family: sans-serif;
 }
