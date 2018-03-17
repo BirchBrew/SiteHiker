@@ -42,7 +42,9 @@ defmodule BlueHarvest.MixProject do
       # AWS Request Signing
       {:sigaws, "~> 0.7"},
       # XML Parser
-      {:quinn, "~> 1.1.2"}
+      {:quinn, "~> 1.1.2"},
+      # Release
+      {:distillery, "~> 1.0.0"}
     ]
   end
 end

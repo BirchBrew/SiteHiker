@@ -1,10 +1,11 @@
 require Logger
+import Util.Priv
 
 defmodule Data.SiteDescription do
   use GenServer
 
   @name __MODULE__
-  @state_file "data/#{@name}.state"
+  @state_file "#{@name}.state"
   @user_agent_pls_no_fbi "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
   @timeout_ms 100_000
 
@@ -64,7 +65,7 @@ defmodule Data.SiteDescription do
   # PRIVATE HELPERS #
   ###################
   defp load_state() do
-    case File.read(@state_file) do
+    case File.read(get_priv_path(@state_file)) do
       {:ok, saved_state} -> :erlang.binary_to_term(saved_state)
       {:error, :enoent} -> %{}
     end
@@ -72,7 +73,7 @@ defmodule Data.SiteDescription do
 
   defp save_state(state) do
     binary_state = :erlang.term_to_binary(state)
-    File.write!(@state_file, binary_state)
+    File.write!(get_priv_path(@state_file), binary_state)
   end
 
   defp get_description(html) do
