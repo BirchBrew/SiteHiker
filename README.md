@@ -11,4 +11,4 @@ I highly recommend the [ElixirLS](https://marketplace.visualstudio.com/items?ite
 - open http://localhost:4000 and try it out!
 
 ## Push to Gigalixir
-- git push gigalixir HEAD:master -f
+- git push gigalixir HEAD:master
