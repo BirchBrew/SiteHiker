@@ -24,36 +24,63 @@ const descriptionLabel = document.querySelector("#descriptionLabel")
 const icon = document.querySelector("#icon")
 const controlsInfo = document.querySelector("#controls")
 const autoExploreWarning = document.querySelector("#autoExploreWarning")
+const siteSearch = document.querySelector("#siteSearch")
 // disable right click menu so it doesn't ruin the immersion
 document.querySelector("body").addEventListener('contextmenu', event => event.preventDefault())
+document.querySelector("#exploreButton").onclick = teleportToSite
+document.querySelector("#backButton").onclick = goToLandingPage
+
 
 window.addEventListener("keydown", e => {
   const SPACE_BAR = 32
   const ESCAPE = 27
+  const ENTER = 13
   const G = 71
   const P = 80
-  switch (e.keyCode) {
-    case SPACE_BAR:
-      renderer.autoFit()
-      break
-    case ESCAPE:
-      controls.hidden = !controls.hidden
-      break
-    case G:
-      renderer.showNode(currentSite)
-      break
-    case P:
-      toggleAutoExplore()
-      break
+  if (siteSearch === document.activeElement) {
+    if (e.keyCode === ENTER) {
+      teleportToSite()
+    }
+  } else {
+    switch (e.keyCode) {
+      case SPACE_BAR:
+        renderer.autoFit()
+        break
+      case ESCAPE:
+        controls.hidden = !controls.hidden
+        break
+      case G:
+        renderer.showNode(currentSite)
+        break
+      case P:
+        toggleAutoExplore()
+        break
+    }
+
   }
 })
 
-reset(location.hash && location.hash.slice(1) || "google.com")
+reset("google.com") // Just so the renderer doesn't break. Ideally 2D removes need.
+
+renderer = renderGraph(graph, {
+  is3d: true, // change to false to render a "flat graph in 3D"
+  node(node) {
+    return getNodeUIDetails(node)
+  },
+});
+
+renderer.on('nodeclick', nodeclickHandler);
+
+goToLandingPage()
 
 function reset(siteName) {
+  graph.clear()
   currentSite = siteName
   exploreQueue = []
   autoExploring = false
+  siteLabel.textContent = ""
+  descriptionLabel.textContent = ""
+  icon.hidden = true
 
   addNode(siteName, {
     start: true,
@@ -61,15 +88,23 @@ function reset(siteName) {
   })
 
   exploreQueue.push(graph.getNode(siteName))
+}
 
-  renderer = renderGraph(graph, {
-    is3d: true, // change to false to render a "flat graph in 3D"
-    node(node) {
-      return getNodeUIDetails(node)
-    },
-  });
+function teleportToSite() {
+  reset(siteSearch.value)
+  document.querySelector("canvas").hidden = false
+  document.querySelector("#mapLabels").hidden = false
+  document.querySelector("#landingLabelsContainer").hidden = true
+}
 
-  renderer.on('nodeclick', nodeclickHandler);
+function goToLandingPage() {
+  document.querySelector("canvas").hidden = true
+  document.querySelector("#mapLabels").hidden = true
+  document.querySelector("#landingLabelsContainer").hidden = false
+
+  siteSearch.focus()
+  siteSearch.value = ""
+
 }
 
 function toggleAutoExplore() {
@@ -134,7 +169,6 @@ function setIcon(image) {
     icon.hidden = false;
     icon.src = 'data:image/jpeg;base64,' + image;
   }
-
 }
 
 function hasNode(id) {
