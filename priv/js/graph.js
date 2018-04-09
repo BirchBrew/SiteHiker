@@ -11,36 +11,55 @@ const ICON_SIZE = 32 // px
 const HALF_ICON_SIZE = ICON_SIZE / 2
 
 const graph = Viva.Graph.graph()
-window.g = graph
 const graphics = Viva.Graph.View.svgGraphics()
+let activeId
+let activePopup
+resetCurrentPopup()
 initializeGraph()
+
+function resetCurrentPopup() {
+  activePopup = {
+    remove() {} // Hacky way to initialize a faux dom node
+  }
+}
 
 function initializeGraph() {
   // This function let us override default node appearance and create
   // something better than blue dots:
   graphics.node(node => {
-    const ui = Viva.Graph.svg('image')
+    const ui = Viva.Graph.svg('g')
+
+    const backOfImage = Viva.Graph.svg('rect')
+      .attr('width', ICON_SIZE)
+      .attr('height', ICON_SIZE)
+      .attr('fill', '#fff')
+    ui.append(backOfImage)
+
+    const img = Viva.Graph.svg('image')
       .attr('width', ICON_SIZE)
       .attr('height', ICON_SIZE)
       .link('/images/question_mark.svg')
+    ui.append(img)
 
-    ui.addEventListener('touchend', makeNodeClickHandler({
+    img.addEventListener('touchend', makeNodeClickHandler({
       node,
-      ui
+      ui,
     }))
-    ui.addEventListener('click', makeNodeClickHandler({
+    img.addEventListener('click', makeNodeClickHandler({
       node,
-      ui
+      ui,
     }))
 
     return ui
   })
 
   graphics.placeNode((nodeUI, pos) => {
-    // nodeUI - is exactly the same object that we returned from
-    //   node() callback above.
-    // pos - is calculated position for this node.
-    nodeUI.attr('x', pos.x - HALF_ICON_SIZE).attr('y', pos.y - HALF_ICON_SIZE)
+    // 'g' element doesn't have convenient (x,y) attributes, instead
+    // we have to deal with transforms: http://www.w3.org/TR/SVG/coords.html#SVGGlobalTransformAttribute
+    nodeUI.attr('transform',
+      'translate(' +
+      (pos.x - HALF_ICON_SIZE) + ',' + (pos.y - HALF_ICON_SIZE) +
+      ')');
   })
 
   // Render the graph with our customized graphics object:
@@ -57,9 +76,50 @@ function initializeGraph() {
       }
     }),
   })
-  window.r = renderer
-
   renderer.run()
+}
+
+window.c = createPopup
+
+function createPopup(node) {
+  const {
+    id,
+    data: {
+      description,
+    },
+  } = node
+
+  const f = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject')
+  f.setAttribute('width', ICON_SIZE * 8)
+  // f.setAttribute('height', ICON_SIZE * 2)
+  // f.setAttribute('x', `-${ICON_SIZE / 2}px`)
+  f.setAttribute('y', `${ICON_SIZE}px`)
+
+  const hyperLink = createHyperLink(id)
+
+  const p = document.createElement('p')
+  p.classList.add('infoPopup')
+  const a = document.createElement('a')
+  a.setAttribute('href', hyperLink)
+  a.setAttribute('target', `_blank`)
+  a.setAttribute('rel', `noopener noreferrer`)
+  a.textContent = id
+  a.addEventListener('touchend', () => {
+    const newWindow = window.open()
+    newWindow.opener = null
+    newWindow.location = hyperLink
+  })
+  p.appendChild(a)
+  p.appendChild(document.createElement('br'))
+  p.appendChild(document.createTextNode(description))
+
+  f.appendChild(p)
+
+  return f
+}
+
+function createHyperLink(id) {
+  return `http://${id}`
 }
 
 function createImageUrl(site) {
@@ -76,18 +136,15 @@ function makeNodeClickHandler(params) {
     if (event) {
       event.preventDefault()
     }
-    console.log(node)
 
     const {
       id,
       data,
     } = node
 
-    if (data.explored) {
-      // TODO maybe render the popup, but skip exploring
-      return
-    } else {
-      ui.link('/images/spinner.gif')
+    if (!data.explored) {
+      const img = ui.querySelector('image')
+      img.link('/images/spinner.gif')
       const [similarSites, description] = await Promise.all([
         fetchSimilarSites(node.id),
         fetchDescription(node.id),
@@ -98,7 +155,32 @@ function makeNodeClickHandler(params) {
         similarSites,
         description,
       })
-      ui.link(createImageUrl(id))
+      img.link(createImageUrl(id))
+
+      // TODO uncomment if we want perma-labels
+      // const text = Viva.Graph.svg('text')
+      //   .attr('y', '-8px')
+      //   .text(node.id)
+
+      // // delay this to event loop to ensure we can read text BBox
+      // setTimeout(() => {
+      //   const {
+      //     x,
+      //     y,
+      //     width,
+      //     height
+      //   } = text.getBBox()
+      //   const rect = Viva.Graph.svg('rect')
+      //     .attr('x', x)
+      //     .attr('y', y)
+      //     .attr('width', width)
+      //     .attr('height', height)
+      //     .attr('fill', '#fff')
+      //   text.remove()
+      //   ui.append(rect)
+      //   ui.append(text)
+      // }, 0)
+      // ui.append(text)
 
       for (const site in similarSites) {
         const overlap = similarSites[site]
@@ -107,6 +189,22 @@ function makeNodeClickHandler(params) {
           overlap
         }), 750)
       }
+    }
+
+    activePopup.remove()
+    if (activeId !== id) {
+      activePopup = createPopup(node)
+
+      // make sure to reorder this ui as last node so it draws on top of rest of graph
+      const parentUI = ui.parentElement
+      ui.remove()
+      parentUI.appendChild(ui)
+
+      ui.appendChild(activePopup)
+      activeId = id
+    } else {
+      // this plus the if clause allows us to toggle popup by clicking the current id's image/icon
+      activeId = null
     }
   }
 }

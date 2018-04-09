@@ -36,18 +36,6 @@ svg,
   font-family: sans-serif;
 }
 
-a:link {
-  color: white;
-}
-
-a:visited {
-  color: white;
-}
-
-a:active {
-  color: white;
-}
-
 .round {
   background-color: white;
   padding: 1px;
@@ -81,4 +69,9 @@ a:active {
 
 #tagline {
   font-size: 20px
+}
+
+.infoPopup {
+  background-color: white;
+  color: black;
 }
