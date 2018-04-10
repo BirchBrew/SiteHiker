@@ -38,12 +38,8 @@ window.addEventListener("keydown", e => {
 
 async function isValidSite(siteName) {
 
-  let similarSites = await Promise.resolve(fetchSimilarSites(siteName))
-  if (similarSites === "error") {
-    return false
-  } else {
-    return true
-  }
+  let similarSites = await fetchSimilarSites(siteName)
+  return similarSites !== "error"
 }
 
 function reset(siteName) {
@@ -60,7 +56,7 @@ function reset(siteName) {
 
 async function teleportToSite() {
   let name = siteSearch.value.toLowerCase()
-  if (await Promise.resolve(isValidSite(name))) {
+  if (await isValidSite(name)) {
     reset(name)
     document.querySelector("#mapLabels").hidden = false
     document.querySelector("#landingLabelsContainer").hidden = true
