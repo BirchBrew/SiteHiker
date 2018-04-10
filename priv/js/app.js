@@ -7,6 +7,10 @@ const {
   clearGraph,
 } = require('./graph')
 
+const {
+  fetchSimilarSites
+} = require('./serverApi')
+
 const AUTO_ACTIVATION_DELAY = 1500 // ms
 
 let currentSite
@@ -32,6 +36,16 @@ window.addEventListener("keydown", e => {
   }
 })
 
+async function isValidSite(siteName) {
+
+  let similarSites = await Promise.resolve(fetchSimilarSites(siteName))
+  if (similarSites === "error") {
+    return false
+  } else {
+    return true
+  }
+}
+
 function reset(siteName) {
   clearGraph()
   currentSite = siteName
@@ -44,10 +58,16 @@ function reset(siteName) {
   setTimeout(() => activateNode(siteName), AUTO_ACTIVATION_DELAY)
 }
 
-function teleportToSite() {
-  reset(siteSearch.value)
-  document.querySelector("#mapLabels").hidden = false
-  document.querySelector("#landingLabelsContainer").hidden = true
+async function teleportToSite() {
+  let name = siteSearch.value.toLowerCase()
+  if (await Promise.resolve(isValidSite(name))) {
+    reset(name)
+    document.querySelector("#mapLabels").hidden = false
+    document.querySelector("#landingLabelsContainer").hidden = true
+    document.querySelector('#helper').hidden = true
+  } else {
+    document.querySelector('#helper').hidden = false
+  }
 }
 
 function goToLandingPage() {
@@ -69,9 +89,9 @@ function setDescriptionLabel(text) {
 
 function setIcon(image) {
   if (image === "") {
-    icon.hidden = true;
+    icon.hidden = true
   } else {
-    icon.hidden = false;
-    icon.src = image;
+    icon.hidden = false
+    icon.src = image
   }
 }
