@@ -10,6 +10,8 @@ const {
 const ICON_SIZE = 32 // px
 const HALF_ICON_SIZE = ICON_SIZE / 2
 
+const infoPopup = document.querySelector("#infoPopup")
+
 const graph = Viva.Graph.graph()
 const graphics = Viva.Graph.View.svgGraphics()
 let activeId
@@ -30,9 +32,12 @@ function initializeGraph() {
     const ui = Viva.Graph.svg('g')
 
     const backOfImage = Viva.Graph.svg('rect')
-      .attr('width', ICON_SIZE)
-      .attr('height', ICON_SIZE)
-      .attr('fill', '#fff')
+      .attr('x', HALF_ICON_SIZE / 2)
+      .attr('y', HALF_ICON_SIZE / 2)
+      .attr('width', HALF_ICON_SIZE)
+      .attr('height', HALF_ICON_SIZE)
+      .attr('fill', 'white')
+      .attr('id', 'nodeBG')
     ui.append(backOfImage)
 
     const img = Viva.Graph.svg('image')
@@ -59,7 +64,7 @@ function initializeGraph() {
     nodeUI.attr('transform',
       'translate(' +
       (pos.x - HALF_ICON_SIZE) + ',' + (pos.y - HALF_ICON_SIZE) +
-      ')');
+      ')')
   })
 
   // Render the graph with our customized graphics object:
@@ -67,20 +72,18 @@ function initializeGraph() {
     graphics: graphics,
     container: document.getElementById('graph-container'),
     layout: Viva.Graph.Layout.forceDirected(graph, {
-      gravity: -10,
-      springCoeff: 0.001,
+      gravity: -50,
+      springCoeff: 0.0001,
       dragCoeff: 0.05,
       springTransform(link, spring) {
-        spring.length = (100 - link.data.overlap) * 2
-      }
+        spring.length = (100 - link.data.overlap)
+      },
     }),
   })
   renderer.run()
 }
 
-window.c = createPopup
-
-function createPopup(node) {
+function displayActiveInfo(node) {
   const {
     id,
     data: {
@@ -88,11 +91,7 @@ function createPopup(node) {
     },
   } = node
 
-  const f = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject')
-  f.setAttribute('width', ICON_SIZE * 8)
-  // f.setAttribute('height', ICON_SIZE * 2)
-  // f.setAttribute('x', `-${ICON_SIZE / 2}px`)
-  f.setAttribute('y', `${ICON_SIZE}px`)
+  infoPopup.innerHTML = ""
 
   const hyperLink = createHyperLink(id)
 
@@ -112,9 +111,29 @@ function createPopup(node) {
   p.appendChild(document.createElement('br'))
   p.appendChild(document.createTextNode(description))
 
-  f.appendChild(p)
+  infoPopup.appendChild(p)
+  infoPopup.hidden = false
 
-  return f
+  return infoPopup
+}
+
+function highlightRelatedNodes(nodeId, isOn) {
+  const ui = graphics.getNodeUI(nodeId)
+  ui.querySelector('#bgLabel').attr('visibility', isOn ? 'visible' : 'hidden')
+  ui.querySelector('text').attr('visibility', isOn ? 'visible' : 'hidden')
+  // just enumerate all realted nodes and update link color:
+  graph.forEachLinkedNode(nodeId, (node, link) => {
+    const linkUI = graphics.getLinkUI(link.id)
+    if (linkUI) {
+      // linkUI is a UI object created by graphics below
+      linkUI.attr('stroke', isOn ? 'red' : 'gray')
+      if (node.data.explored) {
+        const linkedNodeUI = graphics.getNodeUI(node.id)
+        linkedNodeUI.querySelector('#bgLabel').attr('visibility', isOn ? 'visible' : 'hidden')
+        linkedNodeUI.querySelector('text').attr('visibility', isOn ? 'visible' : 'hidden')
+      }
+    }
+  })
 }
 
 function createHyperLink(id) {
@@ -141,12 +160,13 @@ function makeNodeClickHandler(params) {
       data,
     } = node
 
+    let renderPromise = Promise.resolve();
     if (!data.explored) {
       const img = ui.querySelector('image')
       img.link('/images/spinner.gif')
       const [similarSites, description] = await Promise.all([
-        fetchSimilarSites(node.id),
-        fetchDescription(node.id),
+        fetchSimilarSites(id),
+        fetchDescription(id),
       ])
 
       Object.assign(data, {
@@ -154,68 +174,118 @@ function makeNodeClickHandler(params) {
         similarSites,
         description,
       })
-      img.link(createImageUrl(id))
 
-      // TODO uncomment if we want perma-labels
-      // const text = Viva.Graph.svg('text')
-      //   .attr('y', '-8px')
-      //   .text(node.id)
-
-      // // delay this to event loop to ensure we can read text BBox
-      // setTimeout(() => {
-      //   const {
-      //     x,
-      //     y,
-      //     width,
-      //     height
-      //   } = text.getBBox()
-      //   const rect = Viva.Graph.svg('rect')
-      //     .attr('x', x)
-      //     .attr('y', y)
-      //     .attr('width', width)
-      //     .attr('height', height)
-      //     .attr('fill', '#fff')
-      //   text.remove()
-      //   ui.append(rect)
-      //   ui.append(text)
-      // }, 0)
-      // ui.append(text)
-
+      const similarNodePromises = []
       for (const site in similarSites) {
-        const overlap = similarSites[site]
-        addNode(site)
-        setTimeout(() => addLink(id, site, {
-          overlap
-        }), 750)
+        if (!hasNode(site) || !hasLink(site, id)) {
+          const overlap = similarSites[site]
+          const similarPromise = delayPromise()
+            .then(() => createNodeSpawnPromise({
+              id,
+              site,
+              overlap,
+            }))
+          similarNodePromises.push(similarPromise)
+        }
       }
+      renderPromise = new Promise(resolve => {
+        Promise.all(similarNodePromises)
+          .then(() => delayPromise(500))
+          .then(() => {
+            ui.querySelector('#nodeBG')
+              .attr('x', 0)
+              .attr('y', 0)
+              .attr('width', ICON_SIZE)
+              .attr('height', ICON_SIZE)
+            img.link(createImageUrl(id))
+            const text = Viva.Graph.svg('text')
+              .attr('y', '-8px')
+              .text(id)
+              .attr('visibility', 'hidden')
+
+            // delay this to event loop to ensure we can read text BBox
+            setTimeout(() => {
+              const {
+                y,
+                width,
+                height
+              } = text.getBBox()
+              // computing x after rendering to center the label
+              const x = -(width - ICON_SIZE) / 2
+              text.attr('x', x)
+              const rect = Viva.Graph.svg('rect')
+                .attr('x', x)
+                .attr('y', y)
+                .attr('width', width)
+                .attr('height', height)
+                .attr('fill', '#fff')
+                .attr('id', 'bgLabel')
+                .attr('visibility', 'hidden')
+
+              text.remove()
+              ui.append(rect)
+              ui.append(text)
+              resolve()
+            }, 0)
+            ui.append(text)
+          })
+      })
+
     }
 
-    activePopup.remove()
-    if (activeId !== id) {
-      activePopup = createPopup(node)
-
-      // make sure to reorder this ui as last node so it draws on top of rest of graph
-      const parentUI = ui.parentElement
-      ui.remove()
-      parentUI.appendChild(ui)
-
-      ui.appendChild(activePopup)
-      activeId = id
-    } else {
-      // this plus the if clause allows us to toggle popup by clicking the current id's image/icon
-      activeId = null
-    }
+    renderPromise.then(() => {
+      if (activeId) {
+        highlightRelatedNodes(activeId, false)
+      }
+      if (activeId !== id) {
+        displayActiveInfo(node)
+        highlightRelatedNodes(id, true)
+        activeId = id
+      } else {
+        // this plus the if clause allows us to toggle popup by clicking the current id's image/icon
+        activeId = null
+        infoPopup.hidden = true
+      }
+    })
   }
 }
 
+function createNodeSpawnPromise(params) {
+  const {
+    id,
+    site,
+    overlap,
+  } = params
+  return delayPromise()
+    .then(() => {
+      addLink(id, site, {
+        overlap
+      })
+      addNode(site)
+    })
+}
+
+function delayPromise(ms = Math.random() * 1000) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 function addNode(id, data = {}) {
-  if (!graph.getNode(id)) { // TODO should use hasNode eventually
+  const node = hasNode(id)
+  if (!node || !node.data) { // TODO should use graph.hasNode eventually
     graph.addNode(id, data)
   }
 }
 
+function hasNode(id) {
+  return graph.getNode(id)
+}
+
+function hasLink(fromId, toId) {
+  return graph.getLink(fromId, toId)
+}
+
 function addLink(fromId, toId, data = {}) {
-  if (!graph.getLink(fromId, toId)) { // TODO should use hasLink eventually
+  if (!hasLink(fromId, toId)) { // TODO should use graph.hasLink eventually
     graph.addLink(fromId, toId, data)
   }
 }
@@ -229,6 +299,8 @@ function activateNode(id) {
 
 function clearGraph() {
   graph.clear()
+  activeId = null
+  infoPopup.hidden = true
 }
 
 module.exports = {
