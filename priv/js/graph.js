@@ -7,6 +7,15 @@ const {
   fetchSimilarSites,
 } = require('./serverApi')
 
+const COLORS = {
+  black: "#1a1a1a",
+  dark_blue: "#4d5d6c",
+  light_blue: "#96a8b2",
+  dark_grey: "#cecece",
+  light_grey: "#dfe1e0",
+  white: "#eaeaea",
+}
+
 const ICON_SIZE = 32 // px
 const HALF_ICON_SIZE = ICON_SIZE / 2
 
@@ -37,7 +46,7 @@ function initializeGraph() {
       .attr('y', HALF_ICON_SIZE / 2)
       .attr('width', HALF_ICON_SIZE)
       .attr('height', HALF_ICON_SIZE)
-      .attr('fill', 'white')
+      .attr('fill', COLORS.white)
       .attr('id', 'nodeBG')
     ui.append(backOfImage)
 
@@ -130,7 +139,7 @@ function highlightRelatedNodes(nodeId, isOn) {
     const linkUI = graphics.getLinkUI(link.id)
     if (linkUI) {
       // linkUI is a UI object created by graphics below
-      linkUI.attr('stroke', isOn ? 'red' : 'gray')
+      linkUI.attr('stroke', isOn ? COLORS.black : COLORS.light_blue)
       if (node.data.explored) {
         const linkedNodeUI = graphics.getNodeUI(node.id)
         linkedNodeUI.querySelector('#bgLabel').attr('visibility', isOn ? 'visible' : 'hidden')
@@ -241,7 +250,7 @@ function makeNodeClickHandler(params) {
                 .attr('y', y)
                 .attr('width', width)
                 .attr('height', height)
-                .attr('fill', '#fff')
+                .attr('fill', COLORS.white)
                 .attr('id', 'bgLabel')
                 .attr('visibility', 'hidden')
 
