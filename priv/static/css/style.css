@@ -1,5 +1,5 @@
 * {
-  color: #eaeaea;
+  color: #1a1a1a;
 }
 
 body,
@@ -10,7 +10,7 @@ svg,
   position: absolute;
   overflow: hidden;
   margin: 0px;
-  background-color: #1a1a1a;
+  background-color: #eaeaea;
 }
 
 .glyphicon-search {
@@ -19,16 +19,16 @@ svg,
 
 input {
   text-transform: lowercase;
-  /* color: #1a1a1a; */
-  background-color: #1a1a1a;
+  /* color: #eaeaea; */
+  background-color: #eaeaea;
 }
 
 ::placeholder {
-  color: #cecece;
+  color: #4d5d6c;
 }
 
 button {
-  background-color: #1a1a1a;
+  background-color: #dfe1e0;
 }
 
 a {
@@ -36,15 +36,15 @@ a {
 }
 
 a:link {
-  color: #96a8b2;
+  color: #4d5d6c;
 }
 
 a:visited {
-  color: #96a8b2;
+  color: #4d5d6c;
 }
 
 a:hover {
-  color: #eaeaea;
+  color: #96a8b2;
 }
 
 #mapLabels {
@@ -117,7 +117,7 @@ a:hover {
 
 #infoPopup {
   border-radius: 15px 15px 0px 0px;
-  background-color: #1a1a1a;
+  background-color: #eaeaea;
   text-align: justify;
   position: relative;
   float: left;
