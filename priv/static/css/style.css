@@ -1,5 +1,5 @@
 * {
-  color: #1a1a1a;
+  color: #eaeaea;
 }
 
 body,
@@ -10,7 +10,41 @@ svg,
   position: absolute;
   overflow: hidden;
   margin: 0px;
-  background-color: #eaeaea;
+  background-color: #1a1a1a;
+}
+
+.glyphicon-search {
+  fill: #eaeaea;
+}
+
+input {
+  text-transform: lowercase;
+  /* color: #1a1a1a; */
+  background-color: #1a1a1a;
+}
+
+::placeholder {
+  color: #cecece;
+}
+
+button {
+  background-color: #1a1a1a;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: #96a8b2;
+}
+
+a:visited {
+  color: #96a8b2;
+}
+
+a:hover {
+  color: #eaeaea;
 }
 
 #mapLabels {
@@ -47,22 +81,6 @@ svg,
   border-radius: 100%;
 }
 
-a {
-  text-decoration: underline;
-}
-
-a:link {
-  color: #4d5d6c;
-}
-
-a:visited {
-  color: #4d5d6c;
-}
-
-a:hover {
-  color: #96a8b2;
-}
-
 #logo {
   width: 100%;
 }
@@ -90,15 +108,6 @@ a:hover {
   font-size: 20px
 }
 
-input {
-  text-transform: lowercase;
-  background-color: #dfe1e0;
-}
-
-button {
-  background-color: #dfe1e0;
-}
-
 #infoContainer {
   position: absolute;
   bottom: 0px;
@@ -108,7 +117,7 @@ button {
 
 #infoPopup {
   border-radius: 15px 15px 0px 0px;
-  background-color: #eaeaea;
+  background-color: #1a1a1a;
   text-align: justify;
   position: relative;
   float: left;

@@ -8,12 +8,10 @@ const {
 } = require('./serverApi')
 
 const COLORS = {
-  black: "#1a1a1a",
-  dark_blue: "#4d5d6c",
-  light_blue: "#96a8b2",
-  dark_grey: "#cecece",
-  light_grey: "#dfe1e0",
-  white: "#eaeaea",
+  highlightLink: "#eaeaea",
+  regularLink: "#4d5d6c",
+  background: "#1a1a1a",
+  text: "#eaeaea",
 }
 
 const ICON_SIZE = 32 // px
@@ -46,7 +44,7 @@ function initializeGraph() {
       .attr('y', HALF_ICON_SIZE / 2)
       .attr('width', HALF_ICON_SIZE)
       .attr('height', HALF_ICON_SIZE)
-      .attr('fill', COLORS.white)
+      .attr('fill', COLORS.background)
       .attr('id', 'nodeBG')
     ui.append(backOfImage)
 
@@ -76,6 +74,25 @@ function initializeGraph() {
       (pos.x - HALF_ICON_SIZE) + ',' + (pos.y - HALF_ICON_SIZE) +
       ')')
   })
+
+  // Step 4. Customize link appearance:
+  //   As you might have guessed already the link()/placeLink()
+  //   functions complement the node()/placeNode() functions
+  //   and let us override default presentation of edges:
+  graphics.link(function (link) {
+    return Viva.Graph.svg('path')
+      .attr('stroke', COLORS.regularLink)
+      .attr('stroke-width', 1)
+      .attr('stroke-dasharray', '10')
+  }).placeLink(function (linkUI, fromPos, toPos) {
+    // linkUI - is the object returend from link() callback above.
+    var data = 'M' + fromPos.x + ',' + fromPos.y +
+      'L' + toPos.x + ',' + toPos.y
+    // 'Path data' (http://www.w3.org/TR/SVG/paths.html#DAttribute )
+    // is a common way of rendering paths in SVG:
+    linkUI.attr("d", data)
+  })
+
 
   // Render the graph with our customized graphics object:
   const renderer = Viva.Graph.View.renderer(graph, {
@@ -139,7 +156,8 @@ function highlightRelatedNodes(nodeId, isOn) {
     const linkUI = graphics.getLinkUI(link.id)
     if (linkUI) {
       // linkUI is a UI object created by graphics below
-      linkUI.attr('stroke', isOn ? COLORS.black : COLORS.light_blue)
+      linkUI.attr('stroke', isOn ? COLORS.highlightLink : COLORS.regularLink)
+        .attr('stroke-dasharray', isOn ? '0' : '10')
       if (node.data.explored) {
         const linkedNodeUI = graphics.getNodeUI(node.id)
         linkedNodeUI.querySelector('#bgLabel').attr('visibility', isOn ? 'visible' : 'hidden')
@@ -234,6 +252,7 @@ function makeNodeClickHandler(params) {
               .attr('y', '-8px')
               .text(id)
               .attr('visibility', 'hidden')
+              .attr('fill', COLORS.text)
 
             // delay this to event loop to ensure we can read text BBox
             setTimeout(() => {
@@ -250,7 +269,7 @@ function makeNodeClickHandler(params) {
                 .attr('y', y)
                 .attr('width', width)
                 .attr('height', height)
-                .attr('fill', COLORS.white)
+                .attr('fill', COLORS.background)
                 .attr('id', 'bgLabel')
                 .attr('visibility', 'hidden')
 
