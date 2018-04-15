@@ -7,8 +7,17 @@ const {
   fetchSimilarSites,
 } = require('./serverApi')
 
-const ICON_SIZE = 32 // px
+const COLORS = {
+  highlightLink: "#cecece",
+  regularLink: "#4d5d6c",
+  background: "#1a1a1a",
+  text: "#cecece",
+  questionMarkFill: "#cecece",
+}
+
+const ICON_SIZE = 42 // px
 const HALF_ICON_SIZE = ICON_SIZE / 2
+const STROKE_WIDTH = 2
 
 const infoPopup = document.querySelector("#infoPopup")
 
@@ -37,7 +46,7 @@ function initializeGraph() {
       .attr('y', HALF_ICON_SIZE / 2)
       .attr('width', HALF_ICON_SIZE)
       .attr('height', HALF_ICON_SIZE)
-      .attr('fill', 'white')
+      .attr('fill', COLORS.questionMarkFill)
       .attr('id', 'nodeBG')
     ui.append(backOfImage)
 
@@ -67,6 +76,25 @@ function initializeGraph() {
       (pos.x - HALF_ICON_SIZE) + ',' + (pos.y - HALF_ICON_SIZE) +
       ')')
   })
+
+  // Step 4. Customize link appearance:
+  //   As you might have guessed already the link()/placeLink()
+  //   functions complement the node()/placeNode() functions
+  //   and let us override default presentation of edges:
+  graphics.link(function (link) {
+    return Viva.Graph.svg('path')
+      .attr('stroke', COLORS.regularLink)
+      .attr('stroke-width', STROKE_WIDTH)
+      .attr('stroke-dasharray', '10')
+  }).placeLink(function (linkUI, fromPos, toPos) {
+    // linkUI - is the object returend from link() callback above.
+    var data = 'M' + fromPos.x + ',' + fromPos.y +
+      'L' + toPos.x + ',' + toPos.y
+    // 'Path data' (http://www.w3.org/TR/SVG/paths.html#DAttribute )
+    // is a common way of rendering paths in SVG:
+    linkUI.attr("d", data)
+  })
+
 
   // Render the graph with our customized graphics object:
   const renderer = Viva.Graph.View.renderer(graph, {
@@ -130,7 +158,9 @@ function highlightRelatedNodes(nodeId, isOn) {
     const linkUI = graphics.getLinkUI(link.id)
     if (linkUI) {
       // linkUI is a UI object created by graphics below
-      linkUI.attr('stroke', isOn ? 'red' : 'gray')
+      linkUI.attr('stroke', isOn ? COLORS.highlightLink : COLORS.regularLink)
+        .attr('stroke-dasharray', isOn ? '0' : '10')
+        .attr('stroke-width', isOn ? STROKE_WIDTH : STROKE_WIDTH)
       if (node.data.explored) {
         const linkedNodeUI = graphics.getNodeUI(node.id)
         linkedNodeUI.querySelector('#bgLabel').attr('visibility', isOn ? 'visible' : 'hidden')
@@ -185,6 +215,8 @@ function makeNodeClickHandler(params) {
     let renderPromise = Promise.resolve();
     if (!data.explored) {
       const img = ui.querySelector('image')
+      const rect = ui.querySelector('#nodeBG')
+      rect.attr('fill', COLORS.background)
       img.link('/images/spinner.gif')
       const [similarSites, description] = await Promise.all([
         fetchSimilarSites(id),
@@ -225,6 +257,7 @@ function makeNodeClickHandler(params) {
               .attr('y', '-8px')
               .text(id)
               .attr('visibility', 'hidden')
+              .attr('fill', COLORS.text)
 
             // delay this to event loop to ensure we can read text BBox
             setTimeout(() => {
@@ -241,7 +274,7 @@ function makeNodeClickHandler(params) {
                 .attr('y', y)
                 .attr('width', width)
                 .attr('height', height)
-                .attr('fill', '#fff')
+                .attr('fill', COLORS.background)
                 .attr('id', 'bgLabel')
                 .attr('visibility', 'hidden')
 
