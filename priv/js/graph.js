@@ -8,11 +8,11 @@ const {
 } = require('./serverApi')
 
 const COLORS = {
-  highlightLink: "#cecece",
-  regularLink: "#4d5d6c",
-  background: "#1a1a1a",
-  text: "#cecece",
-  questionMarkFill: "#cecece",
+  highlightLink: "#4d5d6c",
+  regularLink: "#96a8b2",
+  background: "#eaeaea",
+  text: "#1a1a1a",
+  questionMarkFill: "#4d5d6c",
 }
 
 const ICON_SIZE = 42 // px
