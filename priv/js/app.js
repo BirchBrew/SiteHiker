@@ -18,6 +18,7 @@ window.onLandingPage = true
 
 let currentSite
 let renderer
+let errorTimeout
 
 const controlsInfo = document.querySelector("#controls")
 const siteSearch = document.querySelector("#siteSearch")
@@ -50,6 +51,8 @@ async function teleportToSite() {
   const validatedSiteName = await validateSite(name)
   if (validatedSiteName === "error") {
     document.querySelector('#helper').hidden = false
+    clearTimeout(errorTimeout)
+    errorTimeout = setTimeout(() => document.querySelector('#helper').hidden = true, 3000)
   } else {
     reset(validatedSiteName)
     window.onLandingPage = false
